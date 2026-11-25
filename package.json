@@ -1,0 +1,20 @@
+{
+  "name": "living-in-korea-guide",
+  "version": "1.0.0",
+  "description": "Housing rental information and decision support platform for foreigners in Korea (MVP)",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "korea-housing",
+    "living-in-korea",
+    "rental-calculator",
+    "jeonse",
+    "wolse",
+    "foreigner-guide"
+  ],
+  "author": "Living in Korea Guide Team",
+  "license": "MIT"
+}

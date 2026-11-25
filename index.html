@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living in Korea Guide | 외국인 한국 주거 임대 & 정착 지원 플랫폼</title>
+  <meta name="description" content="외국인을 위한 한국 주거 임대 정보, 전월세 비용 계산기, 보증금 사기 예방법 및 맞춤형 주거 상담 플랫폼. English, 中文, 한국어, 日本語 지원.">
+  
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:title" content="Living in Korea Guide - Rental & Housing Platform">
+  <meta property="og:description" content="Korea's premier foreigner-focused rental guide & cost calculator (EN / 中文 / 한국어 / 日本語).">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            },
+            navy: {
+              800: '#0f172a',
+              900: '#0a0f1d',
+              950: '#060a14',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- ======================================================== -->
+  <!-- 1. NAVIGATION HEADER                                    -->
+  <!-- ======================================================== -->
+  <header class="sticky top-0 z-40 w-full glass-nav border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-800 to-teal-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+          <i data-lucide="home" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <span class="block text-xl font-extrabold text-slate-900 tracking-tight leading-none" data-i18n="brandName">
+            리빙 인 코리아 가이드
+          </span>
+          <span class="block text-xs text-slate-500 font-medium mt-1" data-i18n="brandSubtitle">
+            외국인을 위한 한국 주거 임대 & 정착 지원
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+        <a href="#hero" class="hover:text-emerald-700 transition-colors" data-i18n="navHome">홈</a>
+        <a href="#calculator" class="hover:text-emerald-700 transition-colors" data-i18n="navCalculator">정착 비용 계산기</a>
+        <a href="#guides" class="hover:text-emerald-700 transition-colors" data-i18n="navGuides">주거 가이드</a>
+        <a href="#consultation" class="hover:text-emerald-700 transition-colors" data-i18n="navConsultation">맞춤 상담 신청</a>
+        <a href="#about" class="hover:text-emerald-700 transition-colors" data-i18n="navFaq">소개 & FAQ</a>
+      </nav>
+
+      <!-- Right Action & 4-Language Dropdown Selector -->
+      <div class="hidden md:flex items-center space-x-4">
+        
+        <!-- Language Switcher Dropdown (EN / 中文 / 한국어 / 日本語) -->
+        <div class="relative">
+          <button 
+            id="langDropdownBtn"
+            class="flex items-center space-x-2 px-3.5 py-2 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs font-bold text-slate-700 transition-all shadow-sm">
+            <span id="currentLangFlag">🇰🇷</span>
+            <span id="currentLangLabel">한국어</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400"></i>
+          </button>
+
+          <!-- Dropdown Popover Menu -->
+          <div 
+            id="langDropdownMenu" 
+            class="absolute right-0 mt-2 w-36 bg-white border border-slate-200 rounded-2xl shadow-xl py-2 hidden z-50 text-xs font-semibold">
+            <a href="#" data-lang="ko" class="lang-select-option flex items-center space-x-2 px-4 py-2 hover:bg-emerald-50 hover:text-emerald-800 transition-colors">
+              <span>🇰🇷</span>
+              <span>한국어</span>
+            </a>
+            <a href="#" data-lang="en" class="lang-select-option flex items-center space-x-2 px-4 py-2 hover:bg-emerald-50 hover:text-emerald-800 transition-colors">
+              <span>🇺🇸</span>
+              <span>English</span>
+            </a>
+            <a href="#" data-lang="zh" class="lang-select-option flex items-center space-x-2 px-4 py-2 hover:bg-emerald-50 hover:text-emerald-800 transition-colors">
+              <span>🇨🇳</span>
+              <span>中文</span>
+            </a>
+            <a href="#" data-lang="ja" class="lang-select-option flex items-center space-x-2 px-4 py-2 hover:bg-emerald-50 hover:text-emerald-800 transition-colors">
+              <span>🇯🇵</span>
+              <span>日本語</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <a 
+          href="#consultation"
+          class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-md hover:shadow-lg transition-all"
+          data-i18n="btnInquireNow">
+          안심 집 구하기 신청
+        </a>
+      </div>
+
+      <!-- Mobile Menu & Language Selector -->
+      <div class="md:hidden flex items-center space-x-2">
+        <select 
+          id="mobileLangSelect" 
+          class="px-2 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-700 focus:outline-none">
+          <option value="ko">🇰🇷 KO</option>
+          <option value="en">🇺🇸 EN</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="ja">🇯🇵 日本語</option>
+        </select>
+        <button 
+          id="mobileMenuOpenBtn"
+          class="p-2 rounded-xl text-slate-600 hover:bg-slate-100 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileMenuDrawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden">
+    <div class="absolute right-0 top-0 bottom-0 w-3/4 max-w-xs bg-white p-6 shadow-2xl flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+          <span class="font-extrabold text-slate-900 text-lg">Menu</span>
+          <button id="mobileMenuCloseBtn" class="p-2 text-slate-400 hover:text-slate-700">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <div class="flex flex-col space-y-4 mt-6 text-base font-semibold text-slate-700">
+          <a href="#hero" class="mobile-nav-link hover:text-emerald-700" data-i18n="navHome">홈</a>
+          <a href="#calculator" class="mobile-nav-link hover:text-emerald-700" data-i18n="navCalculator">정착 비용 계산기</a>
+          <a href="#guides" class="mobile-nav-link hover:text-emerald-700" data-i18n="navGuides">주거 가이드</a>
+          <a href="#consultation" class="mobile-nav-link hover:text-emerald-700" data-i18n="navConsultation">맞춤 상담 신청</a>
+          <a href="#about" class="mobile-nav-link hover:text-emerald-700" data-i18n="navFaq">소개 & FAQ</a>
+        </div>
+      </div>
+      <div>
+        <a 
+          href="#consultation"
+          class="mobile-nav-link block w-full py-3 text-center rounded-xl bg-emerald-700 text-white font-bold text-sm shadow-md"
+          data-i18n="btnInquireNow">
+          안심 집 구하기 신청
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================== -->
+  <!-- 2. HERO SECTION                                          -->
+  <!-- ======================================================== -->
+  <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100">
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-emerald-50 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <!-- Trust Badge -->
+      <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-emerald-100/70 border border-emerald-200 text-emerald-900 text-xs font-bold tracking-wide uppercase mb-6 shadow-sm">
+        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-700"></i>
+        <span data-i18n="heroBadge">2026 외국인 한국 주거 안심 나침반</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight max-w-4xl mx-auto" data-i18n="heroTitle">
+        외국인도 안전하게, 한국에서 안심하고 집을 구하세요.
+      </h1>
+
+      <p class="mt-4 text-xl sm:text-2xl font-semibold text-slate-700 max-w-3xl mx-auto" data-i18n="heroSubtitle">
+        복잡한 전월세 제도와 보증금, 실제 총비용을 한눈에 비교하고 계약하세요.
+      </p>
+
+      <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed" data-i18n="heroDescription">
+        부동산 전문 은어나 숨겨진 관리비, 전세 사기 걱정 없이! 한국에 거주하는 외국인 유학생, 연구원, 취업 직장인을 위해 기획된 투명한 주거 정보 플랫폼입니다.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a 
+          href="#guides" 
+          class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all flex items-center justify-center space-x-2">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+          <span data-i18n="btnHeroGuides">주거 가이드 둘러보기</span>
+        </a>
+        <a 
+          href="#calculator" 
+          class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-bold text-sm sm:text-base shadow-sm hover:shadow transition-all flex items-center justify-center space-x-2">
+          <i data-lucide="calculator" class="w-5 h-5 text-emerald-700"></i>
+          <span data-i18n="btnHeroCalculator">정착 비용 계산해보기</span>
+        </a>
+      </div>
+
+      <!-- Real-time Stats Grid -->
+      <div class="mt-14 pt-10 border-t border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="flex items-center justify-center space-x-3 text-left">
+          <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800">
+            <i data-lucide="users" class="w-5 h-5 text-emerald-700"></i>
+          </div>
+          <div>
+            <p class="text-lg font-extrabold text-slate-900 leading-none">2,500+</p>
+            <p class="text-xs text-slate-500 font-medium mt-1" data-i18n="statStudents">유학생 & 외국인 거주자 지원</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center space-x-3 text-left">
+          <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800">
+            <i data-lucide="file-check" class="w-5 h-5 text-emerald-700"></i>
+          </div>
+          <div>
+            <p class="text-lg font-extrabold text-slate-900 leading-none">8 Core</p>
+            <p class="text-xs text-slate-500 font-medium mt-1" data-i18n="statGuides">법률 검증 필수 주거 가이드</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center space-x-3 text-left">
+          <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800">
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-700"></i>
+          </div>
+          <div>
+            <p class="text-lg font-extrabold text-slate-900 leading-none">100%</p>
+            <p class="text-xs text-slate-500 font-medium mt-1" data-i18n="statTransparency">100% 무료 정보 및 투명성</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 3. THREE CORE DIFFERENTIATORS                           -->
+  <!-- ======================================================== -->
+  <section class="py-16 md:py-24 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight" data-i18n="diffTitle">
+          외국인이 한국 집 구할 때 가장 혼란스러운 점, 저희가 해결합니다
+        </h2>
+        <p class="mt-4 text-base md:text-lg text-slate-600" data-i18n="diffSubtitle">
+          단순 기계 번역이 아닌 한국의 독특한 임대차 제도와 법률 보호 장치를 명쾌하게 정리했습니다.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: True Cost Breakdown -->
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="coins" class="w-7 h-7"></i>
+            </div>
+            <span class="inline-block text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 uppercase tracking-wide mb-3" data-i18n="diff1Tag">
+              투명한 예산 설계
+            </span>
+            <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="diff1Title">
+              실질 비용 투명 분석 (True Cost)
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed" data-i18n="diff1Desc">
+              한국의 보증금은 수백~수천만 원 단위로 큽니다. 계약 시 당장 필요한 총 현금과 관리비에 숨겨진 공과금까지 입주 전 정확하게 시뮬레이션합니다.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/60">
+            <a href="#calculator" class="text-xs font-bold text-emerald-800 hover:text-emerald-950 flex items-center space-x-1">
+              <span data-i18n="btnHeroCalculator">정착 비용 계산해보기</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Foreigner-Friendly System -->
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="stamp" class="w-7 h-7"></i>
+            </div>
+            <span class="inline-block text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-900 uppercase tracking-wide mb-3" data-i18n="diff2Tag">
+              보증금 우선변제권
+            </span>
+            <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="diff2Title">
+              외국인 친화적 법률 보호 (Legal Protection)
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed" data-i18n="diff2Desc">
+              외국인등록증(ARC) 발급 전 여권 계약법부터, 입주 당일 보증금을 지키는 '확정일자'와 '체류지 변경신고(전입신고)' 절차를 안내합니다.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/60">
+            <button onclick="openArticleModal('fixed-date-and-address-registration')" class="text-xs font-bold text-blue-800 hover:text-blue-950 flex items-center space-x-1">
+              <span data-i18n="btnReadArticle">가이드 전문 읽기</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Scam Prevention -->
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="shield-alert" class="w-7 h-7"></i>
+            </div>
+            <span class="inline-block text-xs font-bold px-3 py-1 rounded-full bg-rose-100 text-rose-900 uppercase tracking-wide mb-3" data-i18n="diff3Tag">
+              무위험 점검 체크리스트
+            </span>
+            <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="diff3Title">
+              깡통전세 및 계약 사기 예방 (Scam Prevention)
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed" data-i18n="diff3Desc">
+              소중한 보증금을 지키기 위한 등기부등본 갑구·을구 근저당 부채비율 확인법과 불법 전대차(이중계약) 방지 필수 체크리스트를 제공합니다.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200/60">
+            <button onclick="openArticleModal('preventing-jeonse-scams')" class="text-xs font-bold text-rose-800 hover:text-rose-950 flex items-center space-x-1">
+              <span data-i18n="btnReadArticle">가이드 전문 읽기</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 4. RENTAL COST CALCULATOR                                -->
+  <!-- ======================================================== -->
+  <section id="calculator" class="py-16 md:py-24 bg-slate-100 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-800 px-3 py-1 rounded-full bg-emerald-100" data-i18n="calcBadge">
+          핵심 인터랙티브 시뮬레이터
+        </span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mt-3" data-i18n="calcTitle">
+          초기 정착 자금 & 실제 월 주거비 계산기
+        </h2>
+        <p class="mt-3 text-base text-slate-600" data-i18n="calcSubtitle">
+          계약 및 입주 시 당장 필요한 총 목돈과 매월 고정으로 지출되는 진짜 주거 비용을 계산해 보세요.
+        </p>
+
+        <!-- Presets Bar -->
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
+          <span class="text-xs font-bold text-slate-500 mr-2" data-i18n="calcHousingTypeLabel">추천 주거 프리셋:</span>
+          <button 
+            data-preset="student" 
+            class="calc-preset-btn text-xs font-semibold px-4 py-2 rounded-xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 transition-all shadow-sm">
+            <span data-i18n="presetStudent">대학가 학생 원룸 (신촌/안암 등)</span>
+          </button>
+          <button 
+            data-preset="officetel" 
+            class="calc-preset-btn text-xs font-semibold px-4 py-2 rounded-xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 transition-all shadow-sm ring-2 ring-emerald-600 bg-emerald-50 border-emerald-500 text-emerald-900">
+            <span data-i18n="presetOfficetel">모던 역세권 오피스텔 (강남/마포)</span>
+          </button>
+          <button 
+            data-preset="tworoom" 
+            class="calc-preset-btn text-xs font-semibold px-4 py-2 rounded-xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 transition-all shadow-sm">
+            <span data-i18n="presetTwoRoom">넓은 투룸 (직장인/룸메이트)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Calculator Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Input Controls (7 cols) -->
+        <div class="lg:col-span-7 bg-white p-6 md:p-8 rounded-3xl border border-slate-200 shadow-md space-y-6">
+          
+          <!-- Deposit Input -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label for="calcDepositNumber" class="text-sm font-bold text-slate-800" data-i18n="labelDeposit">
+                임차 보증금 (Deposit - 원 KRW)
+              </label>
+              <div class="relative">
+                <input 
+                  type="number" 
+                  id="calcDepositNumber" 
+                  min="1000000" 
+                  max="100000000" 
+                  step="500000" 
+                  value="10000000"
+                  class="w-36 text-right font-mono font-bold text-slate-900 border border-slate-200 rounded-lg px-2 py-1 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+              </div>
+            </div>
+            <input 
+              type="range" 
+              id="calcDepositRange" 
+              min="1000000" 
+              max="50000000" 
+              step="500000" 
+              value="10000000"
+              class="w-full h-2 bg-slate-200 rounded-lg cursor-pointer">
+            <div class="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
+              <span>1,000,000 ₩</span>
+              <span>25,000,000 ₩</span>
+              <span>50,000,000 ₩</span>
+            </div>
+          </div>
+
+          <!-- Monthly Rent Input -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label for="calcRentNumber" class="text-sm font-bold text-slate-800" data-i18n="labelRent">
+                월세 (Monthly Rent - 원 KRW)
+              </label>
+              <input 
+                type="number" 
+                id="calcRentNumber" 
+                min="200000" 
+                max="5000000" 
+                step="50000" 
+                value="800000"
+                class="w-36 text-right font-mono font-bold text-slate-900 border border-slate-200 rounded-lg px-2 py-1 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            </div>
+            <input 
+              type="range" 
+              id="calcRentRange" 
+              min="200000" 
+              max="2500000" 
+              step="50000" 
+              value="800000"
+              class="w-full h-2 bg-slate-200 rounded-lg cursor-pointer">
+            <div class="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
+              <span>200,000 ₩</span>
+              <span>1,200,000 ₩</span>
+              <span>2,500,000 ₩</span>
+            </div>
+          </div>
+
+          <!-- Maintenance Fee Input -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label for="calcMaintNumber" class="text-sm font-bold text-slate-800" data-i18n="labelMaintenance">
+                월 관리비 (Maintenance - 원 KRW)
+              </label>
+              <input 
+                type="number" 
+                id="calcMaintNumber" 
+                min="0" 
+                max="500000" 
+                step="10000" 
+                value="120000"
+                class="w-36 text-right font-mono font-bold text-slate-900 border border-slate-200 rounded-lg px-2 py-1 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            </div>
+            <input 
+              type="range" 
+              id="calcMaintRange" 
+              min="0" 
+              max="300000" 
+              step="10000" 
+              value="120000"
+              class="w-full h-2 bg-slate-200 rounded-lg cursor-pointer">
+            <div class="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
+              <span>0 ₩</span>
+              <span>150,000 ₩</span>
+              <span>300,000 ₩</span>
+            </div>
+          </div>
+
+          <!-- Utilities Included Checklist -->
+          <div class="pt-4 border-t border-slate-100">
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-3" data-i18n="labelUtilitiesIncluded">
+              관리비에 이미 포함된 항목 (해당 항목 체크):
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-medium text-slate-700">
+              <label class="flex items-center space-x-2 cursor-pointer p-2 rounded-lg hover:bg-slate-50 border border-slate-200">
+                <input type="checkbox" data-util="water" class="util-checkbox rounded text-emerald-600 focus:ring-emerald-500">
+                <span data-i18n="utilWater">수도세 (Water)</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer p-2 rounded-lg hover:bg-slate-50 border border-slate-200">
+                <input type="checkbox" data-util="internet" class="util-checkbox rounded text-emerald-600 focus:ring-emerald-500">
+                <span data-i18n="utilInternet">인터넷/Wi-Fi</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer p-2 rounded-lg hover:bg-slate-50 border border-slate-200">
+                <input type="checkbox" data-util="cleaning" checked class="util-checkbox rounded text-emerald-600 focus:ring-emerald-500">
+                <span data-i18n="utilCleaning">공용 청소비</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer p-2 rounded-lg hover:bg-slate-50 border border-slate-200">
+                <input type="checkbox" data-util="elevator" checked class="util-checkbox rounded text-emerald-600 focus:ring-emerald-500">
+                <span data-i18n="utilElevator">승강기 유지비</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer p-2 rounded-lg hover:bg-slate-50 border border-slate-200">
+                <input type="checkbox" data-util="gas" class="util-checkbox rounded text-emerald-600 focus:ring-emerald-500">
+                <span data-i18n="utilGas">난방/도시가스</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer p-2 rounded-lg hover:bg-slate-50 border border-slate-200">
+                <input type="checkbox" data-util="electricity" class="util-checkbox rounded text-emerald-600 focus:ring-emerald-500">
+                <span data-i18n="utilElectricity">전기세 (Power)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Realtor Commission Settings -->
+          <div class="pt-4 border-t border-slate-100">
+            <div class="flex items-center justify-between mb-2">
+              <label class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="labelRealtorFee">
+                부동산 중개보수 (중개수수료)
+              </label>
+              <div class="flex items-center space-x-3 text-xs">
+                <label class="flex items-center space-x-1 cursor-pointer">
+                  <input type="radio" name="realtorMode" id="realtorModeAuto" value="auto" checked class="text-emerald-600">
+                  <span class="font-medium text-slate-700">법정 자동 계산 (Auto)</span>
+                </label>
+                <label class="flex items-center space-x-1 cursor-pointer">
+                  <input type="radio" name="realtorMode" id="realtorModeManual" value="manual" class="text-emerald-600">
+                  <span class="font-medium text-slate-700">직접 입력 (Custom)</span>
+                </label>
+              </div>
+            </div>
+            <div class="flex items-center space-x-3">
+              <input 
+                type="number" 
+                id="manualRealtorFeeInput" 
+                disabled 
+                placeholder="직접 입력 금액 (원)" 
+                class="w-full text-sm border border-slate-200 rounded-lg p-2 font-mono disabled:bg-slate-50 disabled:text-slate-400">
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1" data-i18n="realtorAutoNote">
+              국토교통부 주택 임대차 법정 요율 상한 + 부가세 10% 자동 계산
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right: Results & Breakdown Card (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- Primary Total Card -->
+          <div class="p-6 md:p-8 rounded-3xl bg-slate-900 text-white shadow-xl relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-40 h-40 bg-emerald-500/20 rounded-full blur-2xl pointer-events-none"></div>
+
+            <!-- Top Output: Total Move-In Cash -->
+            <div class="pb-6 border-b border-slate-800">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400" data-i18n="resultTotalMoveIn">
+                  계약 및 입주 시 당장 필요한 총 초기 자금
+                </span>
+                <i data-lucide="wallet" class="w-5 h-5 text-emerald-400"></i>
+              </div>
+              <div class="mt-2 text-3xl sm:text-4xl font-black text-white font-mono tracking-tight" id="outTotalMoveIn">
+                11,320,000 ₩
+              </div>
+              <div class="mt-1 text-xs text-slate-400 font-medium" id="outMoveInCurrencies">
+                ≈ $8,203 · ≈ ¥59,578 · ≈ ¥1,230,434
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1" data-i18n="resultTotalMoveInSub">
+                계약금 및 잔금 당일까지 실제로 준비해야 하는 총 현금
+              </p>
+            </div>
+
+            <!-- Visual Proportion Bar -->
+            <div class="my-4">
+              <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden flex">
+                <div id="barDeposit" class="bg-emerald-500 h-full transition-all duration-300" style="width: 85%;"></div>
+                <div id="barRent" class="bg-blue-500 h-full transition-all duration-300" style="width: 10%;"></div>
+                <div id="barOther" class="bg-amber-400 h-full transition-all duration-300" style="width: 5%;"></div>
+              </div>
+              <div class="flex justify-between text-[10px] text-slate-400 mt-1.5">
+                <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-500 mr-1 inline-block"></span> 보증금</span>
+                <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-blue-500 mr-1 inline-block"></span> 첫 달 월세</span>
+                <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-amber-400 mr-1 inline-block"></span> 관리비·수수료 등</span>
+              </div>
+            </div>
+
+            <!-- Second Output: True Monthly Cost -->
+            <div class="pt-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-400" data-i18n="resultMonthlyTrue">
+                  매월 나가는 실제 월 주거 비용
+                </span>
+                <i data-lucide="calendar" class="w-5 h-5 text-blue-400"></i>
+              </div>
+              <div class="mt-2 text-2xl sm:text-3xl font-extrabold text-white font-mono" id="outTrueMonthly">
+                975,000 ₩
+              </div>
+              <div class="mt-1 text-xs text-slate-400 font-medium" id="outMonthlyCurrencies">
+                ≈ $706 / month · ≈ ¥5,131 / month · ≈ ¥105,978 / month
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1" data-i18n="resultMonthlyTrueSub">
+                월세 + 실제 관리비 + 미포함 공과금 추정액 합산
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Itemized Breakdown Card -->
+          <div class="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm text-sm space-y-4">
+            <h4 class="font-bold text-slate-900 border-b border-slate-100 pb-2 flex items-center justify-between">
+              <span data-i18n="breakdownTitle">초기 필요 자금 상세 구성 (Move-in Cash)</span>
+              <span class="text-xs font-normal text-slate-400" data-i18n="currencyRef">Reference KRW</span>
+            </h4>
+            
+            <div class="space-y-2.5 text-xs">
+              <div class="flex justify-between items-center text-slate-600">
+                <span data-i18n="itemDeposit">임차 보증금 전액 (퇴거 시 전액 반환)</span>
+                <span class="font-mono font-bold text-slate-900" id="outDepositItem">10,000,000 ₩</span>
+              </div>
+              <div class="text-[11px] text-right text-slate-400" id="outDepositCurrency"></div>
+
+              <div class="flex justify-between items-center text-slate-600">
+                <span data-i18n="itemFirstRent">첫 달 월세 (입주 시 선납)</span>
+                <span class="font-mono font-bold text-slate-900" id="outFirstRentItem">800,000 ₩</span>
+              </div>
+
+              <div class="flex justify-between items-center text-slate-600">
+                <span data-i18n="itemFirstMaint">첫 달 관리비</span>
+                <span class="font-mono font-bold text-slate-900" id="outFirstMaintItem">120,000 ₩</span>
+              </div>
+
+              <div class="flex justify-between items-center text-slate-600">
+                <div>
+                  <span data-i18n="itemRealtorFee">법정 중개보수 (부가세 10% 포함 추정)</span>
+                  <div class="text-[10px] text-slate-400" id="outRealtorDetails">0.4% rate, capped</div>
+                </div>
+                <span class="font-mono font-bold text-slate-900" id="outRealtorFeeItem">250,000 ₩</span>
+              </div>
+
+              <div class="flex justify-between items-center text-slate-600">
+                <span data-i18n="itemMoveInSupplies">입주 청소 및 생필품·종량제봉투 준비금</span>
+                <span class="font-mono font-bold text-slate-900" id="outSetupBufferItem">150,000 ₩</span>
+              </div>
+            </div>
+
+            <!-- Cultural Pro-Tips Accordion Box -->
+            <div class="mt-4 pt-3 border-t border-slate-100 text-xs bg-emerald-50/60 p-3.5 rounded-xl text-emerald-950 space-y-1.5">
+              <div class="font-bold flex items-center space-x-1.5 text-emerald-900">
+                <i data-lucide="lightbulb" class="w-4 h-4 text-emerald-700"></i>
+                <span data-i18n="cultureTipTitle">한국 임대차 문화 & 안심 계약 팁:</span>
+              </div>
+              <p class="leading-relaxed" data-i18n="cultureTip1">
+                <strong>보증금 증액 시 월세 절감(전월세 전환율):</strong> 보증금을 1,000만 원 더 걸면 월세를 약 4~5만 원 깎을 수 있는 관례가 있습니다.
+              </p>
+              <p class="leading-relaxed" data-i18n="cultureTip2">
+                <strong>월세 낮추고 관리비 올리는 함정 주의:</strong> 월세는 싸게 표기하고 관리비를 15만 원 이상 부과하며 공과금을 따로 받는 매물이 있으니 반드시 포함 항목을 확인하세요.
+              </p>
+              <p class="leading-relaxed" data-i18n="cultureTip3">
+                <strong>보증금 법적 보호 필수 조치:</strong> 입주 당일 열쇠를 받자마자 관할 주민센터에서 '확정일자'를 받고 '전입신고'를 마쳐야 보증금 우선변제권이 생깁니다.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 5. RENTAL GUIDES                                         -->
+  <!-- ======================================================== -->
+  <section id="guides" class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-800 px-3 py-1 rounded-full bg-emerald-100" data-i18n="guidesBadge">
+            엄선된 주거 정보 허브
+          </span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mt-3" data-i18n="guidesTitle">
+            한국 주거 & 임대차 가이드 아티클
+          </h2>
+          <p class="mt-2 text-base text-slate-600 max-w-xl" data-i18n="guidesSubtitle">
+            법률 및 현장 전문가가 검증한 외국인 맞춤형 한국 정착 실전 가이드입니다.
+          </p>
+        </div>
+
+        <!-- Search Input -->
+        <div class="mt-6 md:mt-0 w-full md:w-80 relative">
+          <input 
+            type="text" 
+            id="guideSearchInput" 
+            placeholder="가이드 검색 (예: 보증금, 깡통전세, 외국인등록증)..." 
+            data-i18n-placeholder="searchPlaceholder"
+            class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center space-x-2 overflow-x-auto pb-4 mb-8 text-xs sm:text-sm font-semibold border-b border-slate-100">
+        <button data-category="all" class="guide-tab-btn whitespace-nowrap px-4 py-2 rounded-xl bg-slate-900 text-white transition-all shadow-sm" data-i18n="tabAll">
+          전체 가이드
+        </button>
+        <button data-category="finding" class="guide-tab-btn whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-100 transition-all" data-i18n="tabFinding">
+          집 구하기 기초
+        </button>
+        <button data-category="lease" class="guide-tab-btn whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-100 transition-all" data-i18n="tabLease">
+          임대차 계약
+        </button>
+        <button data-category="safety" class="guide-tab-btn whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-100 transition-all" data-i18n="tabSafety">
+          안전 & 법률
+        </button>
+        <button data-category="living" class="guide-tab-btn whitespace-nowrap px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-100 transition-all" data-i18n="tabLiving">
+          한국 생활 정착
+        </button>
+        <button data-category="chinese" class="guide-tab-btn whitespace-nowrap px-4 py-2 rounded-xl bg-white text-rose-700 hover:bg-rose-50 transition-all" data-i18n="tabChinese">
+          中文·특화가이드
+        </button>
+      </div>
+
+      <!-- Articles Grid -->
+      <div id="articlesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Google AdSense Billboard Slot -->
+      <div class="mt-16 p-4 rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-center">
+        <div class="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-2" data-i18n="adDisclaimer">
+          스폰서 광고
+        </div>
+        <div class="h-24 md:h-28 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 rounded-xl flex items-center justify-center text-slate-500 text-xs font-mono">
+          <span>Google AdSense Slot [category-feed-billboard-970x90]</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 6. HOUSING INQUIRY & CONSULTATION                        -->
+  <!-- ======================================================== -->
+  <section id="consultation" class="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-600/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-800" data-i18n="inquiryBadge">
+          맞춤형 1:1 지원
+        </span>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-4" data-i18n="inquiryTitle">
+          무료 맞춤 주거 상담 & 매물 매칭 신청
+        </h2>
+        <p class="mt-3 text-base text-slate-300 max-w-2xl mx-auto" data-i18n="inquirySubtitle">
+          원하시는 지역과 예산을 남겨주시면, 검증된 다국어 상담 전문 공인중개사 파트너가 안전한 매물을 찾아 1:1로 안내해 드립니다.
+        </p>
+      </div>
+
+      <!-- Lead Capture Form -->
+      <form id="housingInquiryForm" class="bg-white/10 backdrop-blur-xl border border-white/15 p-6 sm:p-10 rounded-3xl shadow-2xl space-y-6 text-slate-100">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Full Name -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="formName">
+              성명 (여권상 영문명 또는 성함) *
+            </label>
+            <input 
+              type="text" 
+              id="inquiryName" 
+              required 
+              placeholder="예: Alex Johnson 또는 홍길동" 
+              data-i18n-placeholder="formNamePlaceholder"
+              class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm">
+          </div>
+
+          <!-- Contact Type & ID -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="formContactType">
+              선호하는 연락 수단 *
+            </label>
+            <div class="flex space-x-2">
+              <select 
+                id="inquiryContactType" 
+                class="w-1/3 px-3 py-3 rounded-xl bg-slate-800 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm">
+                <option value="KakaoTalk">KakaoTalk</option>
+                <option value="Line">LINE</option>
+                <option value="WeChat">WeChat</option>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Email">Email</option>
+              </select>
+              <input 
+                type="text" 
+                id="inquiryContactId" 
+                required 
+                placeholder="예: 카카오톡 ID, 이메일, Line" 
+                data-i18n-placeholder="formContactIdPlaceholder"
+                class="w-2/3 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm">
+            </div>
+          </div>
+
+          <!-- Visa / Residence Status -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="formStatus">
+              체류 자격 / 비자 상태
+            </label>
+            <select 
+              id="inquiryStatus" 
+              class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm">
+              <option value="외국인 유학생 (D-2/D-4)" data-i18n="statusStudent">외국인 유학생 / 어학연수 (D-2 / D-4)</option>
+              <option value="취업 전문직 / 주재원 (E-7/E-2/D-8)" data-i18n="statusWorker">전문직 취업자 / 주재원 (E-7 / E-2 / D-8)</option>
+              <option value="워킹홀리데이 (H-1/F계열)" data-i18n="statusWorkingHoliday">워킹홀리데이 / 거주 등 (H-1 / F계열)</option>
+              <option value="입국 예정 / 기타" data-i18n="statusOther">입국 예정 / 기타</option>
+            </select>
+          </div>
+
+          <!-- Desired Region -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="formRegion">
+              희망 거주 지역 (서울 및 수도권)
+            </label>
+            <select 
+              id="inquiryRegion" 
+              class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm">
+              <option value="신촌 / 홍대 / 마포" data-i18n="regionOption1">신촌 / 홍대 / 마포 (연세대, 이화여대, 서강대)</option>
+              <option value="안암 / 성북" data-i18n="regionOption2">안암 / 성북 (고려대학교, 성신여대)</option>
+              <option value="혜화 / 동대문 / 종로" data-i18n="regionOption3">혜화 / 동대문 / 종로 (성균관대, 외대, 경희대)</option>
+              <option value="강남 / 서초 / 송파" data-i18n="regionOption4">강남 / 서초 / 송파 (업무지구/직장인)</option>
+              <option value="건대 / 광진 / 성수" data-i18n="regionOption5">건대 / 광진 / 성수 (건국대, 세종대)</option>
+              <option value="용산 / 이태원 / 한남동" data-i18n="regionOption6">용산 / 이태원 / 한남동</option>
+              <option value="기타 / 협의 가능" data-i18n="regionOption7">기타 / 협의 가능</option>
+            </select>
+          </div>
+
+          <!-- Target Deposit Budget -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="formBudgetDeposit">
+              희망 보증금 범위 (KRW)
+            </label>
+            <select 
+              id="inquiryDeposit" 
+              class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm">
+              <option value="500만 원 미만">500만 원 미만 (< 5M KRW)</option>
+              <option value="500만 ~ 1,000만 원" selected>500만 ~ 1,000만 원 (일반 원룸)</option>
+              <option value="1,000만 ~ 2,000만 원">1,000만 ~ 2,000만 원 (오피스텔)</option>
+              <option value="2,000만 원 이상">2,000만 원 이상 (투룸/프리미엄)</option>
+            </select>
+          </div>
+
+          <!-- Target Monthly Rent Budget -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="formBudgetRent">
+              희망 월세 범위 (KRW)
+            </label>
+            <select 
+              id="inquiryRent" 
+              class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm">
+              <option value="50만 원 미만">50만 원 미만 / 월</option>
+              <option value="50만 ~ 75만 원" selected>50만 ~ 75만 원 / 월</option>
+              <option value="75만 ~ 100만 원">75만 ~ 100만 원 / 월</option>
+              <option value="100만 원 이상">100만 원 이상 / 월</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Move-in Date -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="formMoveInDate">
+            입주 희망 시기
+          </label>
+          <input 
+            type="date" 
+            id="inquiryDate" 
+            class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm">
+        </div>
+
+        <!-- Notes -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="formNotes">
+            추가 요청사항 및 질문
+          </label>
+          <textarea 
+            id="inquiryNotes" 
+            rows="3" 
+            placeholder="예: 풀옵션 선호, 엘리베이터 필수, 반려동물 가능 여부, 다국어 계약서 지원 희망..." 
+            data-i18n-placeholder="formNotesPlaceholder"
+            class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm"></textarea>
+        </div>
+
+        <!-- Consent Checkbox -->
+        <label class="flex items-start space-x-3 text-xs text-slate-300 cursor-pointer">
+          <input type="checkbox" required checked class="mt-0.5 rounded text-emerald-500 focus:ring-emerald-400">
+          <span data-i18n="formConsent">
+            안전한 주거 상담을 위해 공인중개 파트너에게 정보가 전달되는 것에 동의합니다.
+          </span>
+        </label>
+
+        <!-- Submit Button -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
+          <button 
+            type="submit" 
+            class="w-full sm:w-auto px-10 py-4 rounded-2xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-base shadow-xl hover:shadow-2xl transition-all flex items-center justify-center space-x-2">
+            <i data-lucide="send" class="w-5 h-5"></i>
+            <span data-i18n="btnSubmitInquiry">상담 신청서 제출하기</span>
+          </button>
+          
+          <button 
+            type="button" 
+            id="viewLeadsBtn"
+            class="text-xs text-slate-400 hover:text-slate-200 underline font-medium"
+            data-i18n="btnViewLeads">
+            접수 내역 확인 (시연용 데모)
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 7. ABOUT & FAQ ACCORDION                                -->
+  <!-- ======================================================== -->
+  <section id="about" class="py-16 md:py-24 bg-white border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- About Description Card -->
+      <div class="mb-16 p-8 rounded-3xl bg-slate-50 border border-slate-200">
+        <h3 class="text-2xl font-extrabold text-slate-900 mb-4" data-i18n="aboutHeading">
+          Living in Korea Guide 소개
+        </h3>
+        <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-3" data-i18n="aboutP1">
+          Living in Korea Guide는 한국을 찾는 외국인 거주자들의 주거 정보 비대칭을 해소하기 위해 설립되었습니다. 고액 보증금 제도, 복잡한 등기부 권리관계, 확정일자와 체류지 변경 신고 등 낯선 임대차 환경에서 외국인이 겪는 어려움을 해결합니다.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-sm md:text-base" data-i18n="aboutP2">
+          본 플랫폼은 정보 제공 및 리드 매칭 플랫폼이며 이용료를 받지 않습니다. 모든 주거 매칭과 계약 체결은 공인중개사법에 따라 국가 공인 자격을 갖춘 정규 파트너 부동산을 통해 적법하게 진행됩니다.
+        </p>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="text-center mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-800 px-3 py-1 rounded-full bg-emerald-100" data-i18n="faqBadge">
+          명쾌한 답변
+        </span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mt-3" data-i18n="faqTitle">
+          자주 묻는 질문 (FAQ) & 서비스 소개
+        </h2>
+        <p class="mt-2 text-base text-slate-600" data-i18n="faqSubtitle">
+          한국에서 집을 합법적이고 안전하게 구하기 위해 꼭 알아야 할 필수 지식입니다.
+        </p>
+      </div>
+
+      <!-- Accordion Container -->
+      <div id="faqContainer" class="space-y-4">
+        <!-- Rendered by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================== -->
+  <!-- 8. FOOTER                                                -->
+  <!-- ======================================================== -->
+  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center space-x-2 text-white font-extrabold text-lg">
+            <div class="w-8 h-8 rounded-lg bg-emerald-800 flex items-center justify-center text-white">
+              <i data-lucide="home" class="w-4 h-4"></i>
+            </div>
+            <span data-i18n="brandName">리빙 인 코리아 가이드</span>
+          </div>
+          <p class="max-w-md text-slate-400 leading-relaxed" data-i18n="footerDisclaimer">
+            안내: Living in Korea Guide는 외국인을 위한 주거 정보 및 상담 연결 플랫폼입니다. 실제 부동산 중개 및 계약 체결은 공인중개사법을 준수하는 검증된 제휴 부동산에서 안전하게 전담합니다.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="space-y-3">
+          <h5 class="text-white font-bold uppercase tracking-wider text-xs" data-i18n="quickLinks">빠른 메뉴</h5>
+          <ul class="space-y-2">
+            <li><a href="#hero" class="hover:text-white transition-colors" data-i18n="navHome">홈</a></li>
+            <li><a href="#calculator" class="hover:text-white transition-colors" data-i18n="navCalculator">정착 비용 계산기</a></li>
+            <li><a href="#guides" class="hover:text-white transition-colors" data-i18n="navGuides">주거 가이드</a></li>
+            <li><a href="#consultation" class="hover:text-white transition-colors" data-i18n="navConsultation">맞춤 상담 신청</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors" data-i18n="navFaq">소개 & FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Guide Categories -->
+        <div class="space-y-3">
+          <h5 class="text-white font-bold uppercase tracking-wider text-xs" data-i18n="categories">가이드 카테고리</h5>
+          <ul class="space-y-2">
+            <li><a href="#guides" class="hover:text-white transition-colors" data-i18n="tabFinding">집 구하기 기초</a></li>
+            <li><a href="#guides" class="hover:text-white transition-colors" data-i18n="tabLease">임대차 계약</a></li>
+            <li><a href="#guides" class="hover:text-white transition-colors" data-i18n="tabSafety">안전 & 법률</a></li>
+            <li><a href="#guides" class="hover:text-white transition-colors" data-i18n="tabLiving">한국 생활 정착</a></li>
+            <li><a href="#guides" class="hover:text-white transition-colors" data-i18n="tabChinese">중국어·특화가이드</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p data-i18n="footerCopyright">
+          © 2026 Living in Korea Guide. All rights reserved. 대한민국 거주 외국인을 위해 제작되었습니다.
+        </p>
+        <div class="flex items-center space-x-4">
+          <span class="inline-flex items-center space-x-1 text-emerald-400">
+            <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+            <span>SSL Secured · No Spam Guarantee</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ======================================================== -->
+  <!-- MODAL: FULL ARTICLE READER                               -->
+  <!-- ======================================================== -->
+  <div id="articleModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="min-h-screen px-4 py-8 flex items-center justify-center">
+      <div class="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+        <div id="articleModalBody">
+          <!-- Dynamically populated by app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ======================================================== -->
+  <!-- MODAL: INQUIRY SUCCESS CONFIRMATION                      -->
+  <!-- ======================================================== -->
+  <div id="inquirySuccessModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl text-center space-y-4 border border-slate-100">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+        <i data-lucide="check" class="w-8 h-8"></i>
+      </div>
+      <h3 class="text-2xl font-extrabold text-slate-900" data-i18n="inquirySuccessTitle">
+        주거 상담 신청이 완료되었습니다!
+      </h3>
+      <div class="p-3 bg-slate-50 rounded-xl text-xs font-mono text-slate-700">
+        <span data-i18n="inquirySuccessDesc">고객님의 접수 번호는</span>
+        <strong id="successLeadCode" class="block text-emerald-700 text-base mt-1">LKG-2026-0000</strong>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed" data-i18n="inquirySuccessDetail">
+        접수된 조건을 토대로 다국어 전문 코디네이터가 24시간 이내에 기재해주신 연락처로 상담을 연결해 드립니다.
+      </p>
+      <button 
+        onclick="closeInquirySuccessModal()"
+        class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-colors">
+        확인 (Got It)
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ======================================================== -->
+  <!-- DRAWER: PREVIEW LEADS (DEMO)                             -->
+  <!-- ======================================================== -->
+  <div id="leadsDrawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden">
+    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-slate-50 shadow-2xl flex flex-col justify-between overflow-hidden">
+      <div class="p-6 bg-white border-b border-slate-200 flex items-center justify-between">
+        <div>
+          <h4 class="font-extrabold text-slate-900 text-lg">접수된 상담 목록 (Demo DB)</h4>
+          <p class="text-xs text-slate-500">브라우저 localStorage에 안전하게 보관된 문의 내역</p>
+        </div>
+        <button onclick="closeLeadsDrawer()" class="p-2 text-slate-400 hover:text-slate-700">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <div id="leadsDrawerContent" class="p-6 flex-1 overflow-y-auto">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <div class="p-4 bg-white border-t border-slate-200 text-center">
+        <button 
+          onclick="closeLeadsDrawer()"
+          class="w-full py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs transition-colors">
+          닫기 (Close)
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/articles.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/inquiry.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
