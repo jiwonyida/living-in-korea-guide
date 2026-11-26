@@ -1,7 +1,93 @@
 // Living in Korea Guide - Curated Rental Articles
-// 8 high-value articles across 5 categories in English (en), Chinese (zh), Korean (ko), and Japanese (ja)
+// High-value articles across 5 categories in English (en), Chinese (zh), Korean (ko), and Japanese (ja)
 
 const articlesData = [
+  {
+    id: "essential-lease-special-clauses",
+    category: "lease",
+    tags: ["Special Clauses", "Contract", "Deposit Protection", "특약사항"],
+    readTime: 5,
+    publishDate: "2026-11-26",
+    author: {
+      name: "Min-jun Kim",
+      role: "Licensed Real Estate & Expat Housing Advisor"
+    },
+    accentColor: "from-emerald-600 to-cyan-800",
+    title: {
+      en: "5 Must-Have Special Clauses (특약사항) in Your Korean Lease Contract",
+      zh: "韩国租房合同必加的5条“特约条款（특약사항）”：守护押金与免除修缮纠纷",
+      ko: "외국인 임대차 계약 시 꼭 넣어야 할 필수 특약사항 5가지: 보증금과 수리비 지키는 법",
+      ja: "韓国の賃貸契約書に必ず入れるべき特約事項（특약사항）5選：敷金と修繕トラブルを防ぐ"
+    },
+    excerpt: {
+      en: "Standard Korean lease forms don't automatically protect you from surprise repair bills or deposit delays. Add these 5 special clauses before signing.",
+      zh: "韩国标准租房合同并不能自动保护租客免受高额维修费或押金延迟退还的风险。签约前务必让中介加上这5条核心特约条款。",
+      ko: "표준 임대차계약서만 믿고 서명했다가 퇴실 시 도배비·수리비 분쟁이나 보증금 반환 지연을 겪는 경우가 많습니다. 계약 전 꼭 확인해야 할 핵심 특약 5가지를 정리했습니다.",
+      ja: "標準賃貸契約書だけでは退去時の原状回復費用や保証金返還の遅延を防げません。契約前に仲介士へ必ず確認・追加すべき5つの特約事項を紹介します。"
+    },
+    content: {
+      en: `
+        <div class="prose max-w-none">
+          <p class="lead text-lg font-medium text-slate-700">In Korea, the "Special Terms" (특약사항) box at the bottom of a standard lease contract carries strong legal weight. Taking five minutes to request clear wording before signing can save millions of KRW at move-out.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">1. Ban New Mortgages Until Move-In &amp; Fixed Date</h3>
+          <p>Ensure the landlord agrees not to take out any loans or register new collateral on the property until the day after your balance payment and <em>Jeonip-singo</em> (address registration) take effect. If violated, the contract can be voided with full deposit refund.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2. Pre-Move-In Repair &amp; Cleaning Commitment</h3>
+          <p>List every defect spotted during the viewing—such as mold, broken air-conditioner remote, or peeling wallpaper—and state that the landlord will repair them prior to your move-in date.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">3. Normal Wear and Tear Exemption</h3>
+          <p>Clarify that natural discoloration of wallpaper, minor floor scuffs from everyday living, and sunlight fading are excluded from tenant restoration charges.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">4. Clear Appliance Repair Responsibility</h3>
+          <p>For furnished ("Full-Option") studios, specify that breakdowns of built-in appliances (boiler, AC, washing machine, fridge) due to aging or normal use are repaired at the landlord's expense.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">5. Tax &amp; Utility Arrears Confirmation</h3>
+          <p>State that the landlord confirms there are no unpaid national/local taxes or prior utility bills on the property, and any outstanding balance before move-in is settled by the landlord.</p>
+        </div>
+      `,
+      zh: `
+        <div class="prose max-w-none">
+          <p class="lead text-lg font-medium text-slate-700">在韩国签约时，合同底部的“特约事项（특약사항）”往往比标准正文更具决定性。签约前花五分钟要求加入以下5条特约，可大幅降低退房扣押金与维修纠纷风险。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">1. 入住登记次日前禁止新增抵押贷款</h3>
+          <p>写明房东在租客付清尾款并完成外国人滞留地变更/转入申报（전입신고）及确定日期（확정일자）的次日之前，不得以该房产设定新的抵押权或贷款；若违反，租客有权解除合同并全额退还押金。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2. 入住前瑕疵修复约定</h3>
+          <p>看房时发现的墙纸破损、空调故障、漏水或霉斑，务必拍照并写入特约，明确由房东在入住日前完成维修与清洁。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">3. 自然老化与正常磨损免赔</h3>
+          <p>明确因正常居住引起的墙纸轻微变色、日照褪色及地板轻微使用痕迹属于自然磨损，退房时不扣除押金。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">4. 房东负责家电自然故障维修</h3>
+          <p>针对精装带家电（풀옵션）房屋，约定锅炉、洗衣机、空调、冰箱等因设备老化而非人为损坏导致的故障由房东承担维修费。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">5. 结清入住前税费与公用事业欠费</h3>
+          <p>注明入住日前产生的水电燃气、管理费及房东国税·地方税欠费均由房东负责结清。</p>
+        </div>
+      `,
+      ko: `
+        <div class="prose max-w-none">
+          <p class="lead text-lg font-medium text-slate-700">한국 임대차계약서에서 가장 중요한 영역은 본문 하단의 <strong>특약사항</strong>입니다. 표준 조항만으로는 보증금 보호나 퇴실 시 수리비 분쟁을 막기 어렵기 때문에, 계약서에 도장을 찍기 전 아래 5가지 특약을 꼭 요청해 두는 것이 안전합니다.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">1. 대항력 발생 익일까지 추가 근저당 설정 금지</h3>
+          <p>잔금 지급 및 전입신고(외국인은 체류지 변경신고)·확정일자 효력이 발생하는 다음 날까지 임대인이 해당 주택에 새로운 근저당이나 담보권을 설정하지 않으며, 위반 시 계약을 해지하고 계약금·보증금 전액을 반환한다는 문구를 넣어야 합니다.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2. 입주 전 하자 수리 및 기본 청소 이행</h3>
+          <p>방문을 둘러볼 때 발견한 곰팡이, 도배 훼손, 문고리 고장, 누수 흔적 등을 사진으로 찍어두고 입주일 전까지 임대인 부담으로 수리해 준다는 내용을 명시하세요.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">3. 통상적 사용에 의한 자연 마모 면책</h3>
+          <p>고의나 중대한 과실이 아닌 일상생활 중 자연스럽게 생기는 벽지 변색, 햇빛 바램, 가구 자국 등에 대해서는 퇴거 시 원상복구 비용을 청구하지 않는다는 특약이 있으면 도배비 분쟁을 줄일 수 있습니다.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">4. 풀옵션 가전·보일러 노후 고장 수리 책임</h3>
+          <p>원룸이나 오피스텔의 기본 옵션(세탁기, 냉장고, 에어컨, 보일러)이 임차인의 과실 없이 노후로 고장 난 경우 임대인이 수리·교체 비용을 부담한다는 점을 분명히 적어두세요.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">5. 입주 전 미납 공과금 및 세금 정산</h3>
+          <p>입주 기준일 이전의 관리비·공과금 체납분과 임대인의 국세·지방세 체납이 없음을 확인하고, 미납금이 발견될 경우 임대인이 즉시 정산한다는 문구를 포함하세요.</p>
+        </div>
+      `,
+      ja: `
+        <div class="prose max-w-none">
+          <p class="lead text-lg font-medium text-slate-700">韓国の賃貸契約書で最も重要なのが、契約書下部にある<strong>特約事項（특약사항）</strong>です。標準条項だけでは保証金保護や退去時の修繕トラブルを防ぎにくいため、署名・捺印の前に以下の5項目を入れてもらうのが安心です。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">1. 対抗力発生の翌日まで新規抵当権設定を禁止</h3>
+          <p>残金支払いおよび転入届（外国人は滞留地変更届）・確定日付の効力が発生する翌日までは、家主が物件に新たな抵当権を設定しないことを明記します。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2. 入居前の不具合修繕・クリーニング約束</h3>
+          <p>内見時に確認した壁紙の剥がれ、カビ、設備の不具合は写真で記録し、入居日前までに家主負担で修繕する旨を記載しましょう。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">3. 通常使用による自然損耗の免責</h3>
+          <p>故意・重過失ではなく日常生活で生じる壁紙の変色や日焼けなどの自然消耗は、退去時の原状回復費用の対象外とすることを明記します。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">4. 備え付け家電・ボイラーの経年故障対応</h3>
+          <p>フルオプション物件の洗濯機・冷蔵庫・エアコン・ボイラーが経年劣化で故障した場合は、家主が修理費を負担する旨を確認しておきます。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">5. 入居前の未払い管理費・税金の精算</h3>
+          <p>入居日以前の公共料金・管理費の未納や家主の税金滞納がないこと、発生時は家主が負担することを明記してください。</p>
+        </div>
+      `
+    }
+  },
   {
     id: "finding-housing-types",
     category: "finding",
