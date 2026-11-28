@@ -134,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initArticleFilters();
   initArticlesGrid();
   initFaqAccordion();
-  initInquiryForm();
   initMobileMenu();
   lucide.createIcons();
 });
@@ -580,39 +579,29 @@ function renderArticleModal(article) {
         </div>
       </div>
 
-      <!-- Top AdSense Slot -->
-      <div class="my-6 p-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 text-center">
-        <div class="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-2">${t.adDisclaimer}</div>
-        <div class="h-20 md:h-24 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 rounded-lg flex items-center justify-center text-slate-500 text-xs font-mono">
-          <span>Google AdSense Slot [article-top-leaderboard-728x90]</span>
-        </div>
-      </div>
-
       <!-- Article Rich Body Content -->
       <div class="article-body-content text-slate-700 leading-relaxed space-y-6">
         ${content}
       </div>
 
-      <!-- Mid-Article AdSense Native Slot -->
-      <div class="my-10 p-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 text-center">
-        <div class="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-2">${t.adDisclaimer}</div>
-        <div class="h-48 md:h-64 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 rounded-lg flex flex-col items-center justify-center text-slate-500 text-xs font-mono p-4">
-          <i data-lucide="layout" class="w-6 h-6 mb-2 text-slate-400"></i>
-          <span>Google AdSense Slot [in-article-native-responsive]</span>
-        </div>
-      </div>
-
       <!-- Next Action CTA -->
       <div class="mt-10 p-6 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h4 class="text-lg font-bold">${t.inquiryTitle}</h4>
-          <p class="text-sm text-slate-300 mt-1">${t.inquirySubtitle}</p>
+          <h4 class="text-lg font-bold">${t.calcTitle}</h4>
+          <p class="text-sm text-slate-300 mt-1">${t.calcSubtitle}</p>
         </div>
-        <button 
-          onclick="closeArticleModal(); document.getElementById('consultation').scrollIntoView({behavior: 'smooth'})"
-          class="whitespace-nowrap px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition-colors shadow-lg">
-          ${t.btnInquireNow}
-        </button>
+        <div class="flex items-center space-x-3">
+          <button 
+            onclick="closeArticleModal(); document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})"
+            class="whitespace-nowrap px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition-colors shadow-lg">
+            ${t.btnHeroCalculator}
+          </button>
+          <button 
+            onclick="closeArticleModal()"
+            class="whitespace-nowrap px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition-colors">
+            ${t.btnBackToGuides}
+          </button>
+        </div>
       </div>
     </div>
   `;
@@ -666,119 +655,6 @@ function toggleFaq(index) {
 }
 
 // ----------------------------------------------------
-// Inquiry Form & Leads
-// ----------------------------------------------------
-function initInquiryForm() {
-  const form = document.getElementById("housingInquiryForm");
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById("inquiryName")?.value.trim();
-    const contactType = document.getElementById("inquiryContactType")?.value;
-    const contactId = document.getElementById("inquiryContactId")?.value.trim();
-    const status = document.getElementById("inquiryStatus")?.value;
-    const region = document.getElementById("inquiryRegion")?.value;
-    const depositBudget = document.getElementById("inquiryDeposit")?.value;
-    const rentBudget = document.getElementById("inquiryRent")?.value;
-    const moveInDate = document.getElementById("inquiryDate")?.value;
-    const notes = document.getElementById("inquiryNotes")?.value.trim();
-
-    if (!name || !contactId) {
-      alert("Please fill in your name and contact info.");
-      return;
-    }
-
-    const leadData = {
-      name,
-      contactType,
-      contactId,
-      status,
-      region,
-      depositBudget,
-      rentBudget,
-      moveInDate,
-      notes
-    };
-
-    const saved = window.inquiryService.saveLead(leadData);
-    showInquirySuccessModal(saved);
-    form.reset();
-  });
-
-  const viewLeadsBtn = document.getElementById("viewLeadsBtn");
-  if (viewLeadsBtn) {
-    viewLeadsBtn.addEventListener("click", () => {
-      showLeadsDrawer();
-    });
-  }
-}
-
-function showInquirySuccessModal(lead) {
-  const modal = document.getElementById("inquirySuccessModal");
-  const codeEl = document.getElementById("successLeadCode");
-  if (codeEl) codeEl.textContent = lead.refCode;
-  if (modal) {
-    modal.classList.remove("hidden");
-  }
-  lucide.createIcons();
-}
-
-function closeInquirySuccessModal() {
-  const modal = document.getElementById("inquirySuccessModal");
-  if (modal) modal.classList.add("hidden");
-}
-
-function showLeadsDrawer() {
-  const leads = window.inquiryService.getStoredLeads();
-  const drawer = document.getElementById("leadsDrawer");
-  const content = document.getElementById("leadsDrawerContent");
-
-  if (!drawer || !content) return;
-
-  if (leads.length === 0) {
-    content.innerHTML = `
-      <div class="p-8 text-center text-slate-500">
-        <i data-lucide="inbox" class="w-12 h-12 mx-auto text-slate-300 mb-2"></i>
-        <p class="font-medium">No inquiries received yet.</p>
-        <p class="text-xs text-slate-400 mt-1">Submit the consultation form to see how inquiries are recorded.</p>
-      </div>
-    `;
-  } else {
-    content.innerHTML = `
-      <div class="space-y-4">
-        ${leads.map(lead => `
-          <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-2 text-sm">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-              <span class="font-bold text-slate-800">${lead.name}</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">${lead.refCode}</span>
-            </div>
-            <div class="grid grid-cols-2 gap-2 text-xs text-slate-600">
-              <div><strong class="text-slate-800">Contact:</strong> ${lead.contactType} - ${lead.contactId}</div>
-              <div><strong class="text-slate-800">Status:</strong> ${lead.status}</div>
-              <div><strong class="text-slate-800">Region:</strong> ${lead.region}</div>
-              <div><strong class="text-slate-800">Move-in:</strong> ${lead.moveInDate || "Flexible"}</div>
-              <div><strong class="text-slate-800">Budget:</strong> Dep ${lead.depositBudget} / Rent ${lead.rentBudget}</div>
-              <div><strong class="text-slate-800">Time:</strong> ${new Date(lead.submittedAt).toLocaleDateString()}</div>
-            </div>
-            ${lead.notes ? `<div class="text-xs bg-slate-50 p-2 rounded text-slate-700 italic">"${lead.notes}"</div>` : ""}
-          </div>
-        `).join("")}
-      </div>
-    `;
-  }
-
-  drawer.classList.remove("hidden");
-  lucide.createIcons();
-}
-
-function closeLeadsDrawer() {
-  const drawer = document.getElementById("leadsDrawer");
-  if (drawer) drawer.classList.add("hidden");
-}
-
-// ----------------------------------------------------
 // Mobile Menu Drawer
 // ----------------------------------------------------
 function initMobileMenu() {
@@ -809,6 +685,3 @@ window.setLanguage = setLanguage;
 window.openArticleModal = openArticleModal;
 window.closeArticleModal = closeArticleModal;
 window.toggleFaq = toggleFaq;
-window.closeInquirySuccessModal = closeInquirySuccessModal;
-window.showLeadsDrawer = showLeadsDrawer;
-window.closeLeadsDrawer = closeLeadsDrawer;

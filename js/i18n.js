@@ -5,7 +5,7 @@ const translations = {
   en: {
     // Navigation & Global
     brandName: "Living in Korea Guide",
-    brandSubtitle: "Housing & Rental Support for Foreigners",
+    brandSubtitle: "Non-Profit Korean Rental & Settlement Information Archive",
     navHome: "Home",
     navCalculator: "Cost Calculator",
     navGuides: "Rental Guides",
@@ -16,13 +16,13 @@ const translations = {
     // Hero Section
     heroBadge: "Official Foreigner Rental Compass 2026",
     heroTitle: "Find Your Home in Korea.",
-    heroSubtitle: "Understand Korean rentals, compare real costs, and rent with confidence.",
-    heroDescription: "No agent jargon, no hidden fees, and zero scams. Designed specifically for international students, expats, and foreign professionals navigating the Korean rental market.",
+    heroSubtitle: "Understand Korean rentals, compare real costs, and prepare with confidence.",
+    heroDescription: "A non-profit housing information archive verified against the Korean Housing Lease Protection Act and official administrative procedures. Built to help international students, researchers, and expats navigate Korea's rental market.",
     btnHeroGuides: "Explore Rental Guides",
     btnHeroCalculator: "Calculate Rental Cost",
-    statStudents: "International Students & Expats Supported",
-    statGuides: "Essential Rental Guides",
-    statTransparency: "100% Free & Transparent",
+    statStudents: "KO · EN · 中文 · 日本語 Supported",
+    statGuides: "Law-Verified Rental Guides",
+    statTransparency: "Non-Profit & Free Information",
 
     // 3 Differentiators
     diffTitle: "Why Korean Rentals Confuse Foreigners — And How We Help",
@@ -136,21 +136,24 @@ const translations = {
     faqTitle: "Frequently Asked Questions & About Us",
     faqSubtitle: "Everything you need to know about renting a home legally and safely in South Korea.",
     aboutHeading: "About Living in Korea Guide",
-    aboutP1: "Living in Korea Guide was created to bridge the information gap for foreign nationals arriving in South Korea. Renting in Korea involves unique conventions — from multi-million won deposits to intricate registration rules — that standard portal sites rarely translate accurately.",
-    aboutP2: "We do not charge tenants for browsing or accessing guides. Real estate matchmaking is conducted solely through licensed, government-certified brokerage partners in accordance with the Korean Licensed Real Estate Agents Act.",
+    aboutP1: "This site is a non-profit information archive built on practical Korean real estate expertise to provide foreign residents with accurate rental information and settlement guides.",
+    aboutP2: "All content is verified and written based on the Korean Housing Lease Protection Act and official administrative procedures.",
 
     // Footer
-    footerDisclaimer: "Disclaimer: Living in Korea Guide is an independent educational and consultation referral portal. Brokerage operations and contract executions are handled directly by licensed partner realtors.",
+    footerDisclaimer: "Disclaimer: Living in Korea Guide is a non-profit information archive providing verified rental and settlement guides based on the Korean Housing Lease Protection Act and official administrative procedures. We do not provide real estate brokerage or individual legal representation.",
     footerCopyright: "© 2026 Living in Korea Guide. All rights reserved. Designed for foreign residents in Korea.",
     quickLinks: "Quick Navigation",
     categories: "Guide Categories",
+    footerPolicies: "Policies & Legal",
+    linkPrivacy: "Privacy Policy",
+    linkTerms: "Terms & Disclaimer",
     contactSupport: "Community & Support"
   },
 
   zh: {
     // Navigation & Global
     brandName: "韩国租房生活指南",
-    brandSubtitle: "专为外国人打造的韩国租赁与生活决策平台",
+    brandSubtitle: "面向在韩外国人的韩国租赁信息与定居指南非营利档案库",
     navHome: "首页",
     navCalculator: "租房费用计算器",
     navGuides: "租房攻略",
@@ -161,13 +164,13 @@ const translations = {
     // Hero Section
     heroBadge: "2026 在韩外国人租房权威指南",
     heroTitle: "在韩安心租房，透视真实成本，无忧入住。",
-    heroSubtitle: "打破信息差，告别黑中介与二房东陷阱。助你轻松搞懂高额押金、转入申报与防坑全流程。",
-    heroDescription: "专为在韩中国留学生、语学堂学生及华人职场人士定制。拒绝生硬机翻，深度解析全租/月租机制、管理费猫腻与租金实测，安全护航你的韩国小窝。",
+    heroSubtitle: "打破信息差，系统掌握韩国高额押金、转入申报与防坑全流程。",
+    heroDescription: "基于韩国不动产实务知识，并依据韩国《住宅租赁保护法》及官方行政流程核实编写的非营利信息档案库，专为在韩留学生与外籍人士打造。",
     btnHeroGuides: "浏览租房指南",
     btnHeroCalculator: "模拟租房费用",
-    statStudents: "已帮助众多留学生与在韩职场人",
-    statGuides: "核心避坑干货指南",
-    statTransparency: "100% 免费透明信息",
+    statStudents: "支持 韩语 · EN · 中文 · 日本语",
+    statGuides: "依法核实的核心租房指南",
+    statTransparency: "非营利 · 100% 免费公开信息",
 
     // 3 Differentiators
     diffTitle: "为什么外国人在韩国租房总踩坑？我们如何为你护航",
@@ -281,21 +284,24 @@ const translations = {
     faqTitle: "常见问题解答 (FAQ) 与平台介绍",
     faqSubtitle: "关于在韩合法、安心租房的所有关键疑问，在此一站式获得权威解答。",
     aboutHeading: "关于 Living in Korea Guide",
-    aboutP1: "Living in Korea Guide 旨在彻底消除外国人在韩国租房面临的信息鸿沟。韩国特有的高额‘全税/月税’保证金机制、复杂的建筑物权利分析和特殊的行政申报流程，常常令初到韩国的朋友无所适从。",
-    aboutP2: "本平台为非营利性信息与线索转介平台，所有指南免费开放。后续房源匹配均严格由持有韩国国家公认中介士资格证书（공인중개사）的正规不动产中介机构执行，严格遵守韩国《公认中介士法》与消费者保护条例。",
+    aboutP1: "本网站是一个非营利性信息档案库，依托韩国不动产实务专业知识，为在韩外籍居住者提供准确的房屋租赁信息与安居定居指南。",
+    aboutP2: "所有内容均依据韩国《住宅租赁保护法》及官方行政流程进行核实并编写。",
 
     // Footer
-    footerDisclaimer: "声明：Living in Korea Guide 为第三方租房科普与咨询对接平台，不直接收取房屋中介佣金。所有租赁合同均由经韩国政府认证的合作不动产中介机构合法签署。",
+    footerDisclaimer: "声明：本网站为基于韩国不动产实务知识与《住宅租赁保护法》及官方行政流程核实的非营利信息档案库，不直接从事房产中介业务或提供个案法律代理。",
     footerCopyright: "© 2026 Living in Korea Guide 韩国租房指南. 保留所有权利. 专为在韩国际友人打造.",
     quickLinks: "快捷导航",
     categories: "攻略分类",
+    footerPolicies: "政策与法律声明",
+    linkPrivacy: "隐私政策 (Privacy)",
+    linkTerms: "使用条款与免责声明 (Terms)",
     contactSupport: "社群与客服咨询"
   },
 
   ko: {
     // Navigation & Global
     brandName: "리빙 인 코리아 가이드",
-    brandSubtitle: "외국인을 위한 한국 주거 임대 & 정착 지원 플랫폼",
+    brandSubtitle: "한국 부동산·임대차 비영리 정보 아카이브",
     navHome: "홈",
     navCalculator: "정착 비용 계산기",
     navGuides: "주거 가이드",
@@ -306,13 +312,13 @@ const translations = {
     // Hero Section
     heroBadge: "2026 외국인 한국 주거 안심 나침반",
     heroTitle: "외국인도 안전하게, 한국에서 안심하고 집을 구하세요.",
-    heroSubtitle: "복잡한 전월세 제도와 보증금, 실제 총비용을 한눈에 비교하고 계약하세요.",
-    heroDescription: "부동산 전문 은어나 숨겨진 관리비, 전세 사기 걱정 없이! 한국에 거주하는 외국인 유학생, 연구원, 취업 직장인을 위해 기획된 투명한 주거 정보 플랫폼입니다.",
+    heroSubtitle: "복잡한 전월세 제도와 보증금, 실제 총비용을 알기 쉽게 비교하고 대비하세요.",
+    heroDescription: "한국 임대차보호법과 공식 행정 절차를 기준으로 검증한 외국인 맞춤형 비영리 주거 정보 아카이브입니다. 유학생·연구원·직장인을 위해 실무 기준의 정착 가이드를 제공합니다.",
     btnHeroGuides: "주거 가이드 둘러보기",
     btnHeroCalculator: "정착 비용 계산해보기",
-    statStudents: "유학생 & 외국인 거주자 지원",
-    statGuides: "법률 검증 필수 주거 가이드",
-    statTransparency: "100% 무료 정보 및 투명성",
+    statStudents: "한국어 · EN · 中文 · 日本語 지원",
+    statGuides: "임대차보호법 기반 검증 가이드",
+    statTransparency: "비영리 · 무료 정보 아카이브",
 
     // 3 Differentiators
     diffTitle: "외국인이 한국 집 구할 때 가장 혼란스러운 점, 저희가 해결합니다",
@@ -426,21 +432,24 @@ const translations = {
     faqTitle: "자주 묻는 질문 (FAQ) & 서비스 소개",
     faqSubtitle: "한국에서 집을 합법적이고 안전하게 구하기 위해 꼭 알아야 할 필수 지식입니다.",
     aboutHeading: "Living in Korea Guide 소개",
-    aboutP1: "Living in Korea Guide는 한국을 찾는 외국인 거주자들의 주거 정보 비대칭을 해소하기 위해 설립되었습니다. 고액 보증금 제도, 복잡한 등기부 권리관계, 확정일자와 체류지 변경 신고 등 낯선 임대차 환경에서 외국인이 겪는 어려움을 해결합니다.",
-    aboutP2: "본 플랫폼은 정보 제공 및 리드 매칭 플랫폼이며 이용료를 받지 않습니다. 모든 주거 매칭과 계약 체결은 공인중개사법에 따라 국가 공인 자격을 갖춘 정규 파트너 부동산을 통해 적법하게 진행됩니다.",
+    aboutP1: "본 사이트는 한국 부동산 실무 지식을 바탕으로 외국인 거주자에게 정확한 임대차 정보와 정착 가이드를 제공하는 비영리 정보 아카이브입니다.",
+    aboutP2: "모든 콘텐츠는 한국 임대차보호법 및 공식 행정 절차를 기준으로 검증하여 작성됩니다.",
 
     // Footer
-    footerDisclaimer: "안내: Living in Korea Guide는 외국인을 위한 주거 정보 및 상담 연결 플랫폼입니다. 실제 부동산 중개 및 계약 체결은 공인중개사법을 준수하는 검증된 제휴 부동산에서 안전하게 전담합니다.",
+    footerDisclaimer: "안내: 본 사이트는 한국 부동산 실무 지식을 바탕으로 외국인 거주자에게 정확한 임대차 정보와 정착 가이드를 제공하는 비영리 정보 아카이브입니다. 모든 콘텐츠는 한국 임대차보호법 및 공식 행정 절차를 기준으로 검증하여 작성되며, 실제 계약 체결 전 관할 기관 및 공인중개사 확인을 권장합니다.",
     footerCopyright: "© 2026 Living in Korea Guide. All rights reserved. 대한민국 거주 외국인을 위해 제작되었습니다.",
     quickLinks: "빠른 메뉴",
     categories: "가이드 카테고리",
+    footerPolicies: "운영 정책 & 법적 안내",
+    linkPrivacy: "개인정보처리방침",
+    linkTerms: "이용약관 및 면책조항",
     contactSupport: "커뮤니티 및 지원"
   },
 
   ja: {
     // Navigation & Global
     brandName: "韓国お部屋探しガイド",
-    brandSubtitle: "外国人向け韓国賃貸・生活意思決定支援プラットフォーム",
+    brandSubtitle: "在韓外国人のための韓国賃貸情報＆定着ガイド非営利アーカイブ",
     navHome: "ホーム",
     navCalculator: "初期費用計算機",
     navGuides: "賃貸ガイド",
@@ -451,13 +460,13 @@ const translations = {
     // Hero Section
     heroBadge: "2026 在韓外国人向け公式賃貸コンパス",
     heroTitle: "韓国で安心して暮らせる家を、確かな知識で見つけよう。",
-    heroSubtitle: "チョンセ・ウォルセの仕組み、本当の初期費用を可視化し、安全な契約をサポート。",
-    heroDescription: "難しい不動産専門用語や隠れた管理費、詐欺のリスクを解消！韓国に滞在する日本人留学生、ワーキングホリデー、駐在員のために設計された安心の住まい情報プラットフォームです。",
+    heroSubtitle: "チョンセ・ウォルセの仕組みや初期費用を正しく把握し、安心して契約に備えましょう。",
+    heroDescription: "韓国の不動産実務知識と住宅賃貸借保護法・公式行政手続きを基準に検証した、在韓外国人向けの非営利情報アーカイブです。",
     btnHeroGuides: "賃貸ガイドを見る",
     btnHeroCalculator: "初期費用を試算する",
-    statStudents: "留学生・在韓居住者を支援",
-    statGuides: "法的根拠に基づく必須ガイド",
-    statTransparency: "100% 無料＆透明な情報提供",
+    statStudents: "韓国語 · EN · 中文 · 日本語 対応",
+    statGuides: "法令に基づく検証済みガイド",
+    statTransparency: "非営利 · 100% 無料公開情報",
 
     // 3 Differentiators
     diffTitle: "韓国の賃貸が外国人にとって難しい理由と、私たちのサポート",
@@ -571,14 +580,17 @@ const translations = {
     faqTitle: "よくあるご質問 (FAQ) ＆ サービス紹介",
     faqSubtitle: "韓国で適法かつ安全に部屋を借りるために知っておくべき必須事項をまとめました。",
     aboutHeading: "Living in Korea Guide について",
-    aboutP1: "Living in Korea Guide は、韓国に滞在する外国人居住者の情報格差を解消するために誕生しました。高額な保証金制度、登記簿の権利関係、確定日付や転入届など、韓国特有の賃貸慣習に戸惑うことなく、安心して新生活をスタートできるようサポートします。",
-    aboutP2: "当サイトは情報提供およびマッチング支援サイトであり、閲覧者から手数料をいただくことはありません。実際の物件仲介および契約締結は、韓国の公認仲介士法に準拠した国家資格を持つ提携不動産会社が安全に担当いたします。",
+    aboutP1: "本サイトは、韓国の不動産実務知識に基づき、在韓外国人居住者に正確な賃貸借情報と定着ガイドを提供する非営利の情報アーカイブです。",
+    aboutP2: "すべてのコンテンツは、韓国の住宅賃貸借保護法および公式な行政手続きを基準に検証・作成されています。",
 
     // Footer
-    footerDisclaimer: "免責事項：Living in Korea Guide は外国人向けの住まい情報および相談窓口プラットフォームです。実際の不動産仲介業務および契約は、提携の正規ライセンス不動産会社が法令を遵守して行います。",
+    footerDisclaimer: "免責事項：本サイトは、韓国の不動産実務知識および住宅賃貸借保護法・公式な行政手続きを基準に検証した情報を提供する非営利の情報アーカイブです。実際の不動産仲介業務や個別の法律相談は直接行いません。",
     footerCopyright: "© 2026 Living in Korea Guide. All rights reserved. 在韓外国人のために制作されました。",
     quickLinks: "クイックナビ",
     categories: "ガイドカテゴリー",
+    footerPolicies: "運営方針＆法的案内",
+    linkPrivacy: "プライバシーポリシー",
+    linkTerms: "利用規約・免責事項",
     contactSupport: "サポート窓口"
   }
 };

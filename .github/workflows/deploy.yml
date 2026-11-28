@@ -1,0 +1,76 @@
+name: Verify & Deploy Living in Korea Guide
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build_and_verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify JavaScript syntax
+        run: |
+          for f in js/*.js; do
+            echo "Checking $f"
+            node --check "$f"
+          done
+
+      - name: Verify AdSense readiness (no demo/slot leaks in active HTML)
+        run: |
+          if grep -Eq "Google AdSense Slot|Demo DB|시연용 데모|housingInquiryForm|leadsDrawer" index.html; then
+            echo "ERROR: Found disabled placeholder/consultation code in index.html"
+            exit 1
+          fi
+          for required in index.html privacy.html terms.html 404.html robots.txt styles.css; do
+            if [ ! -f "$required" ]; then
+              echo "ERROR: Missing required file $required"
+              exit 1
+            fi
+          done
+
+      - name: Build clean production artifact (_site) with cache-busting
+        run: |
+          SHORT_SHA="${GITHUB_SHA::7}"
+          mkdir -p _site
+          cp index.html privacy.html terms.html 404.html robots.txt .nojekyll styles.css _site/
+          cp -r js _site/
+          if [ -d assets ] && [ -n "$(ls -A assets 2>/dev/null)" ]; then
+            cp -r assets _site/
+          fi
+          # Stamp commit SHA on CSS/JS assets so browsers never serve stale versions
+          for html in _site/*.html; do
+            sed -i -E "s/(styles\.css)(\?v=[A-Za-z0-9_-]+)?/\1?v=${SHORT_SHA}/g" "$html"
+            sed -i -E "s/(js\/[a-zA-Z0-9_-]+\.js)(\?v=[A-Za-z0-9_-]+)?/\1?v=${SHORT_SHA}/g" "$html"
+          done
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site"
+
+  deploy:
+    needs: build_and_verify
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

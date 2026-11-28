@@ -305,7 +305,7 @@ const articlesData = [
       `,
       ko: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">외국인에게 가장 낯선 한국의 임대차 제도는 바로 **전세(Jeonse)**와 **보증부 월세(Wolse)**의 공존입니다.</p>
+          <p class="lead text-lg font-medium text-slate-700">외국인에게 가장 낯선 한국의 임대차 제도는 바로 <strong>전세(Jeonse)</strong>와 <strong>보증부 월세(Wolse)</strong>의 공존입니다.</p>
           <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">1. 보증부 월세 (Wolse)</h3>
           <p>500만~2,000만 원 안팎의 보증금을 맡기고 매달 월세를 납부하는 방식으로, 계약 만료 시 보증금 전액을 돌려받습니다. 외국인에게 가장 안전하고 보편적인 방식입니다.</p>
           <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2. 전세 (Jeonse)</h3>
@@ -349,12 +349,28 @@ const articlesData = [
     content: {
       en: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">Yes, you can legally sign a lease using your valid Passport Number. Once your ARC arrives, update your address at the Community Center.</p>
+          <p class="lead text-lg font-medium text-slate-700">Many newcomers ask whether they can sign an official lease before receiving their Alien Registration Card (ARC). Under the Korean Civil Act and Housing Lease Protection Act, <strong>signing a valid contract with your passport number alone is 100% legal</strong>.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Documents Needed at Contract Signing</h3>
+          <ul class="list-disc pl-6 space-y-1 text-slate-600">
+            <li>Original valid passport and visa issuance confirmation</li>
+            <li>Funds for the contract down payment (typically 10% of the security deposit)</li>
+            <li>Handwritten signature or personal seal (signatures carry full legal weight in Korea)</li>
+          </ul>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">After Your ARC Arrives</h3>
+          <p>Once you receive your physical ARC (usually 3–4 weeks after entry), visit your local Community Center (주민센터) or Immigration Office within 14 days to report your change of residence (체류지 변경신고) and obtain your Fixed Date stamp (확정일자).</p>
         </div>
       `,
       zh: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">依据韩国法律，持护照即可签署合法有效的租房合同。拿到登录证后14天内补办居留地变更即可。</p>
+          <p class="lead text-lg font-medium text-slate-700">很多刚入境韩国的留学生或职场人会担心“还没拿到外国人登录证（ARC）能不能正式签租房合同”。依据韩国《民法》与《住宅租赁保护法》，<strong>仅凭有效护照号即可签署完全合法有效的正式租赁合同</strong>。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">签约必备基础材料</h3>
+          <ul class="list-disc pl-6 space-y-1 text-slate-600">
+            <li>本人有效护照原件及签证确认文件</li>
+            <li>签约定金（通常为房屋押金的 10%）转账资金</li>
+            <li>本人亲笔签名或印章（在韩国，外籍人士亲笔签名与印章具有同等法律效力）</li>
+          </ul>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">领取登录证后的补登流程</h3>
+          <p>入境约 3~4 周拿到实体外国人登录证后，请在 14 天内携带合同原件与登录证前往辖区居民中心或出入境管理局办理滞留地变更申报，并同步加盖“确定日期（확정일자）”。</p>
         </div>
       `,
       ko: `
@@ -407,12 +423,24 @@ const articlesData = [
     content: {
       en: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">Always inspect a fresh Certified Real Estate Register (등기부등본). Ensure the landlord's name in Gap-gu matches the deposit recipient account 100%.</p>
+          <p class="lead text-lg font-medium text-slate-700">Protecting your rental deposit starts before you transfer a single won. Always verify a fresh <strong>Certified Real Estate Register (등기부등본)</strong> issued on the exact day of signing and balance payment.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Step 1: Verify Gap-gu (갑구 - Ownership Section)</h3>
+          <p>Check that the legal owner's name and partial resident number in Gap-gu match the landlord's ID and the bank account receiving your deposit 100%. Never wire a deposit to an unverified third party.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Step 2: Check Eul-gu (을구 - Mortgage &amp; Debt Ratio)</h3>
+          <p>Add the maximum mortgage claim amount in Eul-gu plus all existing tenant deposits in the building. If that combined figure exceeds 70% of the building's market value, treat it as high-risk and walk away.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Step 3: Avoid Unauthorized Subleases</h3>
+          <p>Never sign an informal room takeover without the actual building owner's written consent and official contract verification.</p>
         </div>
       `,
       zh: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">签约当日必查《不动产登记簿》。确认甲区产权人与收款账户一致，严防二房东无权转租。</p>
+          <p class="lead text-lg font-medium text-slate-700">守护韩国租房押金的第一步，是在转账前查验签约及尾款当日最新打印的<strong>《不动产登记簿（등기부등본）》</strong>。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">第一步：核实甲区（갑구 - 房屋所有权）</h3>
+          <p>确认甲区登记的产权人姓名与身份证信息，与接收押金的银行账户名 100% 一致。切勿将押金转入未经核实的第三方个人账户。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">第二步：排查乙区（을구 - 抵押权与负债率）</h3>
+          <p>将乙区登记的最高抵押债权额与整栋楼现有租户押金总额相加，若超过房屋市场价的 70%，则存在“空罐全租”暴雷风险，建议果断避开。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">第三步：拒绝无权转租</h3>
+          <p>切勿轻信未取得大房东书面同意的口头或私下二手转租，务必核验原始产权文件。</p>
         </div>
       `,
       ko: `
@@ -461,12 +489,26 @@ const articlesData = [
     content: {
       en: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">Take your original lease contract to the local Jumin Center immediately upon receiving your keys to receive the official Fixed Date stamp (확정일자).</p>
+          <p class="lead text-lg font-medium text-slate-700">Paying your deposit and signing a lease alone does not automatically grant you legal <strong>Opposing Power (대항력)</strong> or <strong>Preferential Repayment Rights (우선변제권)</strong> against third-party creditors.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">What is the Fixed Date (확정일자)?</h3>
+          <p>An official date stamp issued by your local Community Center (주민센터) or court registry office on your original lease contract. Combined with moving in and registering your address, it places your deposit ahead of later mortgages if the property is auctioned.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Move-In Day Checklist</h3>
+          <ul class="list-disc pl-6 space-y-1 text-slate-600">
+            <li>Bring your original signed lease contract, passport/ARC, and a small stamp fee (approx. 600 KRW).</li>
+            <li>Complete your residence registration (전입신고 / 체류지 변경신고) on the same day you receive your keys.</li>
+          </ul>
         </div>
       `,
       zh: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">入住当天带上合同原件前往管辖居民中心盖“确定日字”，赋予押金国家法定的优先受偿权。</p>
+          <p class="lead text-lg font-medium text-slate-700">即使签署了租房合同并付清押金，若未完成法定登记手续，仍无法对抗第三方债权人，也无法获得法律赋予的<strong>对抗力（대항력）</strong>与<strong>优先受偿权（우선변제권）</strong>。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">什么是“确定日期（확정일자）”？</h3>
+          <p>由辖区居民中心或法院登记所在租赁合同原件上加盖的官方日期印章，用以公证合同存在的准确日期。配合实际入住与住址申报，万一房屋日后被司法拍卖，你的押金将优先于后顺位抵押权获得清偿。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">入住当天办理要点</h3>
+          <ul class="list-disc pl-6 space-y-1 text-slate-600">
+            <li>携带租赁合同原件、护照或外国人登录证，以及约 600 韩元手续费前往居民中心。</li>
+            <li>领取钥匙入住当日即刻同步完成住址变更/转入申报与确定日期加盖。</li>
+          </ul>
         </div>
       `,
       ko: `
@@ -511,12 +553,20 @@ const articlesData = [
     content: {
       en: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">Purchase official district trash bags (종량제 봉투) at convenience stores. Pay utility bills via virtual bank transfer or by scanning barcodes at any 24h convenience store!</p>
+          <p class="lead text-lg font-medium text-slate-700">South Korea enforces strict waste sorting rules while offering very convenient utility bill payment options once you know the system.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">1. Official Volume-Rate Trash Bags (종량제 봉투)</h3>
+          <p>Buy your district's designated general waste bags (typically white) and food waste bags (often yellow) at nearby convenience stores or supermarkets. Chicken bones, shells, and onion skins go into <strong>general waste</strong>, not food waste.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2. Paying Gas, Power, and Water Bills</h3>
+          <p>Each paper bill prints a personal virtual bank account number for mobile transfers, or you can scan the barcode at any 24-hour convenience store counter to pay by card or cash.</p>
         </div>
       `,
       zh: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">生活垃圾务必使用便利店购买的白色指定垃圾袋。公共账单可直接去便利店收银台扫码缴费。</p>
+          <p class="lead text-lg font-medium text-slate-700">韩国拥有非常严格的垃圾分类制度，但掌握方法后，日常水电燃气缴费与宽带开通其实十分便捷。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">1. 计量垃圾袋制度（一般垃圾 vs 食物垃圾）</h3>
+          <p>需在便利店或超市购买所在行政区指定的专用垃圾袋。请注意：鸡骨头、贝壳、洋葱皮等硬质或纤维厨余不属于食物垃圾，应投放到<strong>一般垃圾袋</strong>中。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2. 公共事业账单便捷缴费</h3>
+          <p>水电与燃气账单上印有专属虚拟银行账号，可直接用手机银行转账；也可直接携带纸质账单前往 24 小时便利店收银台扫码支付。</p>
         </div>
       `,
       ko: `
@@ -565,17 +615,27 @@ const articlesData = [
     content: {
       en: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">Never send deposit funds to an unapproved sublessor. Add clear addendums regarding wear-and-tear before signing.</p>
+          <p class="lead text-lg font-medium text-slate-700">One of the most frequent housing disputes in student communities involves <strong>unauthorized subleasing (불법 전대차)</strong>—paying a deposit to an acquaintance or graduating senior without the building owner's written consent. Without owner approval, subleases carry no legal deposit protection.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Essential Steps to Protect Your Deposit at Move-Out</h3>
+          <ul class="list-disc pl-6 space-y-1 text-slate-600">
+            <li>Photograph and film the entire room, wallpaper, flooring scratches, and built-in appliances on move-in day, and send the evidence to the landlord/agent.</li>
+            <li>Send written non-renewal notice at least 2 months before lease expiration via SMS or messenger to avoid automatic renewal (묵시적 갱신).</li>
+          </ul>
         </div>
       `,
       zh: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">严禁私自转账给个人转租的“二房东”。合同特约事项中明确壁纸折旧免责条款，并在入住当天全屋拍照留证。</p>
+          <p class="lead text-lg font-medium text-slate-700">在留学生群体中最常发生的租房损失，是向即将回国的学长或熟人支付押金入住<strong>未获大房东书面同意的非法转租房（불법 전대차）</strong>。此类私下转租不受法律保护，极易导致押金无法追回。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">退租时避免押金纠纷的关键技巧</h3>
+          <ul class="list-disc pl-6 space-y-1 text-slate-600">
+            <li>入住第一天用高清照片和视频记录墙纸、地板划痕及家电现状，并及时发送给房东或中介留存。</li>
+            <li>租约到期前至少提前 2 个月通过短信或聊天工具书面通知不再续约，避免触发自动默示续约（묵시적 갱신）。</li>
+          </ul>
         </div>
       `,
       ko: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">유학생 커뮤니티에서 가장 빈번하게 발생하는 피해는 귀국하는 선배나 지인에게 보증금을 건네고 거주하는 **불법 전대차(전전세)**입니다. 집주인의 서면 동의가 없는 전대차는 법적 효력이 없어 보증금을 전액 잃을 위험이 큽니다.</p>
+          <p class="lead text-lg font-medium text-slate-700">유학생 커뮤니티에서 가장 빈번하게 발생하는 피해는 귀국하는 선배나 지인에게 보증금을 건네고 거주하는 <strong>불법 전대차(전전세)</strong>입니다. 집주인의 서면 동의가 없는 전대차는 법적 효력이 없어 보증금을 전액 잃을 위험이 큽니다.</p>
           <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">퇴거 시 보증금 분쟁 방지 필수 팁</h3>
           <ul class="list-disc pl-6 space-y-1 text-slate-600">
             <li>입주 첫날 방 전체 및 벽지, 바닥 스크래치, 옵션 가전 상태를 고화질 사진 및 영상으로 촬영해 공인중개사와 임대인에게 전송해 둡니다.</li>
@@ -621,12 +681,34 @@ const articlesData = [
     content: {
       en: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">Brokerage fees in Korea are strictly regulated. The converted value formula is: Deposit + (Rent × 100 or 70). Always demand a cash receipt (현금영수증) for the 10% VAT.</p>
+          <p class="lead text-lg font-medium text-slate-700">Under Korea's Licensed Real Estate Agents Act, brokerage commissions are strictly capped by statutory rate tables—charging above the legal ceiling is illegal.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Converted Transaction Value Formula</h3>
+          <div class="my-3 p-3 bg-slate-100 rounded-lg font-mono text-sm text-slate-800">
+            Converted Value = Deposit + (Monthly Rent × 100)
+          </div>
+          <p class="text-sm text-slate-600">* If that total is under 50,000,000 KRW, it is recalculated using <code>Deposit + (Monthly Rent × 70)</code>.</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">Statutory Rate &amp; Cap Tiers</h3>
+          <ul class="list-disc pl-6 space-y-1 text-slate-600">
+            <li><strong>Under 50M KRW:</strong> 0.5% max rate (200,000 KRW cap)</li>
+            <li><strong>50M ~ 100M KRW:</strong> 0.4% max rate (300,000 KRW cap)</li>
+            <li><strong>100M ~ 600M KRW:</strong> 0.3% max rate (no fixed cap)</li>
+          </ul>
         </div>
       `,
       zh: `
         <div class="prose max-w-none">
-          <p class="lead text-lg font-medium text-slate-700">韩国中介费受政府法定上限管控。5000万韩元以下折算上限封顶20万韩元。只要缴纳了10%增值税，中介必须开具现金发票。</p>
+          <p class="lead text-lg font-medium text-slate-700">韩国《公认中介士法》对房屋租赁中介手续费（복비）设有严格的法定上限，任何超出法定费率标准的收费均属违法。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">月租换算交易额计算公式</h3>
+          <div class="my-3 p-3 bg-slate-100 rounded-lg font-mono text-sm text-slate-800">
+            换算交易额 = 押金 + (月租 × 100)
+          </div>
+          <p class="text-sm text-slate-600">※ 若计算结果低于 5,000 万韩元，则按 <code>押金 + (月租 × 70)</code> 重新核算。</p>
+          <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">各区间法定费率与封顶上限</h3>
+          <ul class="list-disc pl-6 space-y-1 text-slate-600">
+            <li><strong>5,000 万韩元以下：</strong> 上限费率 0.5%（最高封顶 20 万韩元）</li>
+            <li><strong>5,000 万 ~ 1 亿韩元以下：</strong> 上限费率 0.4%（最高封顶 30 万韩元）</li>
+            <li><strong>1 亿 ~ 6 亿韩元以下：</strong> 上限费率 0.3%（无单独封顶）</li>
+          </ul>
         </div>
       `,
       ko: `
