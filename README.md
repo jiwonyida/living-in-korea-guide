@@ -37,6 +37,6 @@
 ## 💻 로컬 실행 방법
 
 ```powershell
-cd C:\Users\imkat\.gemini\antigravity\scratch\living-in-korea-guide
+cd C:\Users\imkat\.gemini\antigravity\scratch\korea-rent-wiki
 python -m http.server 3000
 ```
