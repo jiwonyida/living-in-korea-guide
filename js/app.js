@@ -492,19 +492,19 @@ function initArticlesGrid() {
               `).join("")}
             </div>
             <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors line-clamp-2 mb-2">
-              ${title}
+              <a href="guides/${article.id}.html" class="hover:underline">${title}</a>
             </h3>
             <p class="text-sm text-slate-600 line-clamp-3 mb-4 leading-relaxed">
               ${excerpt}
             </p>
           </div>
 
-          <button 
-            onclick="openArticleModal('${article.id}')"
+          <a 
+            href="guides/${article.id}.html"
             class="inline-flex items-center justify-between w-full pt-4 border-t border-slate-100 text-sm font-semibold text-emerald-800 hover:text-emerald-950 transition-colors">
             <span>${window.translations[currentLang].btnReadArticle}</span>
             <i data-lucide="arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
-          </button>
+          </a>
         </div>
       </div>
     `;

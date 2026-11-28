@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://jiwonyida.github.io/living-in-korea-guide/sitemap.xml

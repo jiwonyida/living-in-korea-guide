@@ -28,30 +28,35 @@ jobs:
             node --check "$f"
           done
 
-      - name: Verify AdSense readiness (no demo/slot leaks in active HTML)
+      - name: Verify AdSense readiness and required pages
         run: |
           if grep -Eq "Google AdSense Slot|Demo DB|시연용 데모|housingInquiryForm|leadsDrawer" index.html; then
             echo "ERROR: Found disabled placeholder/consultation code in index.html"
             exit 1
           fi
-          for required in index.html privacy.html terms.html 404.html robots.txt styles.css; do
+          for required in index.html privacy.html terms.html 404.html robots.txt sitemap.xml styles.css; do
             if [ ! -f "$required" ]; then
               echo "ERROR: Missing required file $required"
               exit 1
             fi
           done
+          GUIDE_COUNT=$(ls -1 guides/*.html 2>/dev/null | wc -l)
+          if [ "$GUIDE_COUNT" -lt 10 ]; then
+            echo "ERROR: Expected at least 10 guide HTML pages, found $GUIDE_COUNT"
+            exit 1
+          fi
 
       - name: Build clean production artifact (_site) with cache-busting
         run: |
           SHORT_SHA="${GITHUB_SHA::7}"
           mkdir -p _site
-          cp index.html privacy.html terms.html 404.html robots.txt .nojekyll styles.css _site/
-          cp -r js _site/
+          cp index.html privacy.html terms.html 404.html robots.txt sitemap.xml .nojekyll styles.css _site/
+          cp -r js guides _site/
           if [ -d assets ] && [ -n "$(ls -A assets 2>/dev/null)" ]; then
             cp -r assets _site/
           fi
           # Stamp commit SHA on CSS/JS assets so browsers never serve stale versions
-          for html in _site/*.html; do
+          for html in _site/*.html _site/guides/*.html; do
             sed -i -E "s/(styles\.css)(\?v=[A-Za-z0-9_-]+)?/\1?v=${SHORT_SHA}/g" "$html"
             sed -i -E "s/(js\/[a-zA-Z0-9_-]+\.js)(\?v=[A-Za-z0-9_-]+)?/\1?v=${SHORT_SHA}/g" "$html"
           done
