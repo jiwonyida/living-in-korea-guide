@@ -1,10 +1,10 @@
-// Living in Korea Guide - Internationalization (i18n) Dictionary
+// Korea Rent Wiki - Internationalization (i18n) Dictionary
 // Comprehensive English (en), Simplified Chinese (zh), Korean (ko), and Japanese (ja)
 
 const translations = {
   en: {
     // Navigation & Global
-    brandName: "Living in Korea Guide",
+    brandName: "Korea Rent Wiki",
     brandSubtitle: "Non-Profit Korean Rental & Settlement Information Archive",
     navHome: "Home",
     navCalculator: "Cost Calculator",
@@ -135,13 +135,13 @@ const translations = {
     faqBadge: "Clear Answers",
     faqTitle: "Frequently Asked Questions & About Us",
     faqSubtitle: "Everything you need to know about renting a home legally and safely in South Korea.",
-    aboutHeading: "About Living in Korea Guide",
+    aboutHeading: "About Korea Rent Wiki",
     aboutP1: "This site is a non-profit information archive built on practical Korean real estate expertise to provide foreign residents with accurate rental information and settlement guides.",
     aboutP2: "All content is verified and written based on the Korean Housing Lease Protection Act and official administrative procedures.",
 
     // Footer
-    footerDisclaimer: "Disclaimer: Living in Korea Guide is a non-profit information archive providing verified rental and settlement guides based on the Korean Housing Lease Protection Act and official administrative procedures. We do not provide real estate brokerage or individual legal representation.",
-    footerCopyright: "© 2026 Living in Korea Guide. All rights reserved. Designed for foreign residents in Korea.",
+    footerDisclaimer: "Disclaimer: Korea Rent Wiki is a non-profit information archive providing verified rental and settlement guides based on the Korean Housing Lease Protection Act and official administrative procedures. We do not provide real estate brokerage or individual legal representation.",
+    footerCopyright: "© 2026 Korea Rent Wiki. All rights reserved. Designed for foreign residents in Korea.",
     quickLinks: "Quick Navigation",
     categories: "Guide Categories",
     footerPolicies: "Policies & Legal",
@@ -152,7 +152,7 @@ const translations = {
 
   zh: {
     // Navigation & Global
-    brandName: "韩国租房生活指南",
+    brandName: "韩国租房百科",
     brandSubtitle: "面向在韩外国人的韩国租赁信息与定居指南非营利档案库",
     navHome: "首页",
     navCalculator: "租房费用计算器",
@@ -283,13 +283,13 @@ const translations = {
     faqBadge: "答疑解惑",
     faqTitle: "常见问题解答 (FAQ) 与平台介绍",
     faqSubtitle: "关于在韩合法、安心租房的所有关键疑问，在此一站式获得权威解答。",
-    aboutHeading: "关于 Living in Korea Guide",
+    aboutHeading: "关于 Korea Rent Wiki 韩国租房百科",
     aboutP1: "本网站是一个非营利性信息档案库，依托韩国不动产实务专业知识，为在韩外籍居住者提供准确的房屋租赁信息与安居定居指南。",
     aboutP2: "所有内容均依据韩国《住宅租赁保护法》及官方行政流程进行核实并编写。",
 
     // Footer
     footerDisclaimer: "声明：本网站为基于韩国不动产实务知识与《住宅租赁保护法》及官方行政流程核实的非营利信息档案库，不直接从事房产中介业务或提供个案法律代理。",
-    footerCopyright: "© 2026 Living in Korea Guide 韩国租房指南. 保留所有权利. 专为在韩国际友人打造.",
+    footerCopyright: "© 2026 Korea Rent Wiki 韩国租房百科. 保留所有权利. 专为在韩国际友人打造.",
     quickLinks: "快捷导航",
     categories: "攻略分类",
     footerPolicies: "政策与法律声明",
@@ -300,7 +300,7 @@ const translations = {
 
   ko: {
     // Navigation & Global
-    brandName: "리빙 인 코리아 가이드",
+    brandName: "코리아 렌트 위키",
     brandSubtitle: "한국 부동산·임대차 비영리 정보 아카이브",
     navHome: "홈",
     navCalculator: "정착 비용 계산기",
@@ -431,13 +431,13 @@ const translations = {
     faqBadge: "명쾌한 답변",
     faqTitle: "자주 묻는 질문 (FAQ) & 서비스 소개",
     faqSubtitle: "한국에서 집을 합법적이고 안전하게 구하기 위해 꼭 알아야 할 필수 지식입니다.",
-    aboutHeading: "Living in Korea Guide 소개",
+    aboutHeading: "Korea Rent Wiki (코리아 렌트 위키) 소개",
     aboutP1: "본 사이트는 한국 부동산 실무 지식을 바탕으로 외국인 거주자에게 정확한 임대차 정보와 정착 가이드를 제공하는 비영리 정보 아카이브입니다.",
     aboutP2: "모든 콘텐츠는 한국 임대차보호법 및 공식 행정 절차를 기준으로 검증하여 작성됩니다.",
 
     // Footer
     footerDisclaimer: "안내: 본 사이트는 한국 부동산 실무 지식을 바탕으로 외국인 거주자에게 정확한 임대차 정보와 정착 가이드를 제공하는 비영리 정보 아카이브입니다. 모든 콘텐츠는 한국 임대차보호법 및 공식 행정 절차를 기준으로 검증하여 작성되며, 실제 계약 체결 전 관할 기관 및 공인중개사 확인을 권장합니다.",
-    footerCopyright: "© 2026 Living in Korea Guide. All rights reserved. 대한민국 거주 외국인을 위해 제작되었습니다.",
+    footerCopyright: "© 2026 Korea Rent Wiki (코리아 렌트 위키). All rights reserved. 대한민국 거주 외국인을 위해 제작되었습니다.",
     quickLinks: "빠른 메뉴",
     categories: "가이드 카테고리",
     footerPolicies: "운영 정책 & 법적 안내",
@@ -448,7 +448,7 @@ const translations = {
 
   ja: {
     // Navigation & Global
-    brandName: "韓国お部屋探しガイド",
+    brandName: "韓国賃貸ウィキ",
     brandSubtitle: "在韓外国人のための韓国賃貸情報＆定着ガイド非営利アーカイブ",
     navHome: "ホーム",
     navCalculator: "初期費用計算機",
@@ -579,13 +579,13 @@ const translations = {
     faqBadge: "よくあるご質問",
     faqTitle: "よくあるご質問 (FAQ) ＆ サービス紹介",
     faqSubtitle: "韓国で適法かつ安全に部屋を借りるために知っておくべき必須事項をまとめました。",
-    aboutHeading: "Living in Korea Guide について",
+    aboutHeading: "Korea Rent Wiki（韓国賃貸ウィキ）について",
     aboutP1: "本サイトは、韓国の不動産実務知識に基づき、在韓外国人居住者に正確な賃貸借情報と定着ガイドを提供する非営利の情報アーカイブです。",
     aboutP2: "すべてのコンテンツは、韓国の住宅賃貸借保護法および公式な行政手続きを基準に検証・作成されています。",
 
     // Footer
     footerDisclaimer: "免責事項：本サイトは、韓国の不動産実務知識および住宅賃貸借保護法・公式な行政手続きを基準に検証した情報を提供する非営利の情報アーカイブです。実際の不動産仲介業務や個別の法律相談は直接行いません。",
-    footerCopyright: "© 2026 Living in Korea Guide. All rights reserved. 在韓外国人のために制作されました。",
+    footerCopyright: "© 2026 Korea Rent Wiki（韓国賃貸ウィキ）. All rights reserved. 在韓外国人のために制作されました。",
     quickLinks: "クイックナビ",
     categories: "ガイドカテゴリー",
     footerPolicies: "運営方針＆法的案内",

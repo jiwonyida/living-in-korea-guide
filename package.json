@@ -1,20 +1,21 @@
 {
-  "name": "living-in-korea-guide",
+  "name": "korea-rent-wiki",
   "version": "1.0.0",
-  "description": "Housing rental information and decision support platform for foreigners in Korea (MVP)",
+  "description": "Korea Rent Wiki - Housing rental information and decision support platform for foreigners in Korea",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 3000",
     "serve": "npx serve ."
   },
   "keywords": [
+    "korea-rent-wiki",
     "korea-housing",
-    "living-in-korea",
+    "korea-rental",
     "rental-calculator",
     "jeonse",
     "wolse",
     "foreigner-guide"
   ],
-  "author": "Living in Korea Guide Team",
+  "author": "Korea Rent Wiki Team",
   "license": "MIT"
 }

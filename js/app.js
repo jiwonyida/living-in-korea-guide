@@ -1,4 +1,4 @@
-// Living in Korea Guide - Main Application Controller
+// Korea Rent Wiki - Main Application Controller
 // Supports 4 Languages: English (en), Chinese (zh), Korean (ko), Japanese (ja)
 
 const SUPPORTED_LANGS = ["en", "zh", "ko", "ja"];

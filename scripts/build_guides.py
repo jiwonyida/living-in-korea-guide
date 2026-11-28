@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ARTICLES_JS = ROOT / "js" / "articles.js"
 GUIDES_DIR = ROOT / "guides"
-BASE_URL = "https://jiwonyida.github.io/living-in-korea-guide"
+BASE_URL = "https://korea-rent-wiki.pages.dev"
 LAST_VERIFIED = "2026-11-28"
 
 OFFICIAL_SOURCES_BY_CATEGORY = {
@@ -101,7 +101,7 @@ def parse_articles(source: str) -> list[dict]:
             "category": category,
             "readTime": read_time or "5",
             "publishDate": publish_date or LAST_VERIFIED,
-            "authorName": author_name or "Living in Korea Guide Editorial",
+            "authorName": author_name or "Korea Rent Wiki Editorial",
             "authorRole": author_role or "Korean Housing Information Archive",
             "title": ko_title,
             "excerpt": ko_excerpt,
@@ -143,11 +143,11 @@ def render_guide_html(article: dict, all_articles: list[dict]) -> str:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title_esc} | Living in Korea Guide</title>
+  <title>{title_esc} | Korea Rent Wiki</title>
   <meta name="description" content="{excerpt_esc}">
   <link rel="canonical" href="{canonical}">
 
-  <meta property="og:title" content="{title_esc} | Living in Korea Guide">
+  <meta property="og:title" content="{title_esc} | Korea Rent Wiki">
   <meta property="og:description" content="{excerpt_esc}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{canonical}">
@@ -165,7 +165,7 @@ def render_guide_html(article: dict, all_articles: list[dict]) -> str:
           <i data-lucide="home" class="w-5 h-5"></i>
         </div>
         <span class="font-extrabold text-slate-900 text-base sm:text-lg tracking-tight" data-i18n="brandName">
-          리빙 인 코리아 가이드
+          코리아 렌트 위키
         </span>
       </a>
 
@@ -276,7 +276,7 @@ def render_guide_html(article: dict, all_articles: list[dict]) -> str:
 
   <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-xs mt-12">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p data-i18n="footerCopyright">© 2026 Living in Korea Guide. All rights reserved. 대한민국 거주 외국인을 위해 제작되었습니다.</p>
+      <p data-i18n="footerCopyright">© 2026 Korea Rent Wiki (코리아 렌트 위키). All rights reserved. 대한민국 거주 외국인을 위해 제작되었습니다.</p>
       <div class="flex items-center space-x-4">
         <a href="../index.html" class="hover:text-white underline" data-i18n="navHome">홈</a>
         <a href="../privacy.html" class="hover:text-white underline" data-i18n="linkPrivacy">개인정보처리방침</a>

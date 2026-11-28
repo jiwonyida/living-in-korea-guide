@@ -1,4 +1,4 @@
-// Living in Korea Guide - Rental Cost Calculator
+// Korea Rent Wiki - Rental Cost Calculator
 // Korean Statutory Brokerage Commission, Move-in Cash, and True Monthly Cost Simulator
 // Multi-currency support: KRW, USD, CNY, JPY
 

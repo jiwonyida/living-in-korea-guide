@@ -1,4 +1,4 @@
-// Living in Korea Guide - Curated Rental Articles
+// Korea Rent Wiki - Curated Rental Articles
 // High-value articles across 5 categories in English (en), Chinese (zh), Korean (ko), and Japanese (ja)
 
 const articlesData = [
@@ -330,7 +330,7 @@ const articlesData = [
     readTime: 5,
     publishDate: "2026-03-05",
     author: {
-      name: "Living in Korea Guide Team",
+      name: "Korea Rent Wiki Team",
       role: "Immigration & Legal Documentation Desk"
     },
     accentColor: "from-cyan-600 to-blue-800",
